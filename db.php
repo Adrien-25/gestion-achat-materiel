@@ -8,12 +8,10 @@ define('PWD', '');
 /*Hôte de la base de donnée */
 define('HOST','localhost');
 
-
 /*define('DATABASE', 'adriens_materiel');
 define('USER', 'adriens');
 define('PWD', 'sHXd4ZJ2qCL8rA==');
 */
-
 
 /*Connexion à la base de donnée*/
 try {
