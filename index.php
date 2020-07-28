@@ -11,11 +11,10 @@ session_start();
 /*Connexion base de donnée*/
 require_once 'db.php';
 /*Test de connexion*/
-/*
-if(empty($_SESSION['identifiant'])){
+ if(empty($_SESSION['identifiant'])){
     header('Location: login.php');
-}
-*/
+} 
+
 
 //Préparation de la requête
 $sql= 'SELECT id,adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel';
