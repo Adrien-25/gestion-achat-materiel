@@ -1,6 +1,6 @@
 <?php
 /*Nom de la base de donnée*/
-define('DATABASE', 'materiel');
+define('DATABASE', 'gestion_achat');
 /*Identifiant de la base de donnée*/ 
 define('USER', 'root');
 /*Mot de passe de la base de donnée*/ 
