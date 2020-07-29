@@ -11,21 +11,21 @@ session_start();
 /*Connexion base de donnée*/
 require_once 'db.php';
 /*Test de connexion*/
- if(empty($_SESSION['identifiant'])){
+if(empty($_SESSION['identifiant'])){
     header('Location: login.php');
 } 
+
+echo '<a href="logout.php">Déconnexion</a>';
 
 
 //Préparation de la requête
 $sql= 'SELECT id,adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel';
 $sth = $dbh->prepare($sql);
-var_dump($sql);
 //Exécution de la requête
 $sth->execute();
 
 //On recupère le résultat de la requête
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);  
-var_dump($result);
 //Gestion des formats des dates en français
 $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT,IntlDateFormatter::NONE);
 echo '<a href="ajouter.php">Ajouter</a><br>';
