@@ -15,8 +15,8 @@ if(empty($_SESSION['identifiant'])){
     header('Location: login.php');
 } 
 
-echo '<a href="logout.php">Déconnexion</a>';
-
+echo '<a href="logout.php">Déconnexion</a><br>';
+echo '<a href="ajouter.php">Ajouter</a><br>';
 
 //Préparation de la requête
 $sql= 'SELECT id,adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel';
@@ -28,7 +28,7 @@ $sth->execute();
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);  
 //Gestion des formats des dates en français
 $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT,IntlDateFormatter::NONE);
-echo '<a href="ajouter.php">Ajouter</a><br>';
+
 foreach($result as $row){
     echo '<tr>';
     echo '<td>'.$row['id'].'<br></td>';
@@ -43,13 +43,12 @@ foreach($result as $row){
     echo '<td>'.$row['conseil_entretien'].'<br></td>';
     echo '<td>'.$row['ticket_achat'].'<br></td>';
     echo '<td>'.$row['manuel'].'<br></td>';
-    echo '<td><a href="modifier.php?modifier=1&id='.$row['id'].'"><i class="material-icons icon">edit</i></a><br></td>';
-    echo '<td><button name="delete.php?id='.$row['id'].'" id="myBtn" class="btnDelete" onclick="confirmation('.$row['id'].')"><i class="material-icons icon">delete_outline</i></button><br></td>';
+    echo '<td><a href="modifier.php?modifier=1&id='.$row['id'].'">Modifier</a><br></td>';
+    echo '<td><a href="supprimer.php?id='.$row['id'].'">Supprimer</a><br></td>';
     echo '</tr>';
     $test = 0;  
     
 }
-
 
 $template = $twig->load('pages/index.html.twig');
 echo $template->render();
