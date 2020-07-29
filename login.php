@@ -7,8 +7,6 @@ session_start();
 if(!empty($_SESSION['identifiant'])){
   header('Location: index.php');
 }
-
-
 /* élément twig */
 require_once 'vendor/autoload.php';
 
@@ -27,19 +25,20 @@ if(!isset($_SESSION['identifiant'])){
   //Exécution de la requête
   $sth->execute();
   //On recupère le résultat de la requête
-  $result = $sth->fetch(PDO::FETCH_ASSOC); 
-
-  $identifiant = $result['identifiant'];
-  $mot_de_passe = $result['mot_de_passe'];
-  if (isset($_POST['envoyer'])){
-
-    if ($_POST['identifiant']==$identifiant && $_POST['mot_de_passe']==$mot_de_passe) {
-      $_SESSION['valid'] = true;
-      $_SESSION['timeout'] = time();
-      $_SESSION['identifiant'] = $identifiant; 
-      header('Location: index.php');
-    }else {
-        $msg = 'Mauvais indentifiant ou mot de passe';
+  $result = $sth->fetchAll(PDO::FETCH_ASSOC); 
+  
+  foreach($result as $row){
+    $identifiant = $row['identifiant'];
+    $mot_de_passe = $row['mot_de_passe'];
+    if (isset($_POST['envoyer'])){
+      if ($_POST['identifiant']==$identifiant && $_POST['mot_de_passe']==$mot_de_passe) {
+        $_SESSION['valid'] = true;
+        $_SESSION['timeout'] = time();
+        $_SESSION['identifiant'] = $identifiant; 
+        header('Location: index.php');
+      }else {
+          $msg = 'Mauvais indentifiant ou mot de passe';
+      }
     }
   }
 }
