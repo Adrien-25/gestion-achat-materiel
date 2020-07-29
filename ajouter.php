@@ -2,7 +2,6 @@
 /*Connexion base de donnée*/
 require_once 'db.php';
 
-
 $adresse = '';
 $url = '';
 $nom = '';
@@ -78,97 +77,30 @@ Nom des input/select
 id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel
 */
 ?>
-
-<form action="" method="post">
-    <!--Adresse-->
-    <div>
-        <label>Adresse</label>
-    </div>
-    <div>
-        <input type="text" name="adresse" id="adresse" placeholder="Adresse">
-        <small>* obligatoire</small>
-    </div>
-    <!--Url-->
-    <div>
-        <label>Url</label>
-    </div>
-    <div>
-        <input type="text" name="url" id="url" placeholder="Url">
-        <small>* obligatoire</small>
-    </div>
-    <!--Nom-->
-    <div>
-        <label>Nom</label>
-    </div>
-    <div>
-        <input type="text" name="nom" id="nom" placeholder="Nom">
-        <small>* obligatoire</small>
-    </div>
-    <!--Référence-->
-    <div>
-        <label>Référence</label>
-    </div>
-    <div>
-        <input type="text" name="categorie" id="categorie" placeholder="Référence">
-        <small>* obligatoire</small>
-    </div>
-    <!--Catégorie-->
-    <div>
-        <label>Catégorie</label>
-    </div>
-    <div>
-        <input type="text" name="reference" id="reference" placeholder="Catégorie">
-        <small>* obligatoire</small>
-    </div>
-    <!--Date d'achat-->
-    <div>
-        <label>Date d'achat</label>
-    </div>
-    <div>
-        <input type="date" name="date_achat" id="date_achat" placeholder="Date d'achat">
-        <small>* obligatoire</small>
-    </div>
-    <!--Date de fin de garantie-->
-    <div>
-        <label>Date de fin de garantie</label>
-    </div>
-    <div>
-        <input type="date" name="date_fin_garantie" id="date_fin_garantie" placeholder="Date de fin de garantie">
-        <small>* obligatoire</small>
-    </div>
-    <!--Prix-->
-    <div>
-        <label>Prix</label>
-    </div>
-    <div>
-        <input type="text" name="prix" id="prix" placeholder="Prix">
-        <small>* obligatoire</small>
-    </div>
-    <!--Conseil entretien-->
-    <div>
-        <label>Conseil entretien</label>
-    </div>
-    <div>
-        <input type="textarea" name="conseil_entretien" id="conseil_entretien" placeholder="Conseil entretien" rows="3">
-        <small>* obligatoire</small>
-    </div>
-    <!--Ticket achat-->
-    <div>
-        <label>Ticket achat</label>
-    </div>
-    <div>
-        <input type="file" name="ticket_achat" id="ticket_achat" placeholder="Ticket achat">
-        <small>* obligatoire</small>
-    </div>
-    <!--Manuel-->
-    <div>
-        <label>Manuel</label>
-    </div>
-    <div>
-        <input type="file" name="manuel" id="manuel" placeholder="Manuel">
-        <small>* obligatoire</small>
-    </div>
-    <!--Bouton submit-->
-    <input type="submit" value="Ajouter">
-
+<a href="index.php">Acceuil</a>
+<form action="" method="post" name="ajout">
+    <label>Adresse</label>
+    <input type="text" name="adresse" id="adresse" placeholder="Adresse">
+    <label>Url</label>
+    <input type="text" name="url" id="url" placeholder="Url">
+    <label>Nom</label>
+    <input type="text" name="nom" id="nom" placeholder="Nom">
+    <label>Référence</label>
+    <input type="text" name="categorie" id="categorie" placeholder="Référence">
+    <label>Catégorie</label>
+    <input type="text" name="reference" id="reference" placeholder="Catégorie">
+    <label>Date d'achat</label>
+    <input type="date" name="date_achat" id="date_achat" placeholder="Date d'achat">
+    <label>Date de fin de garantie</label>
+    <input type="date" name="date_fin_garantie" id="date_fin_garantie" placeholder="Date de fin de garantie">
+    <label>Prix</label>
+    <input type="text" name="prix" id="prix" placeholder="Prix">
+    <label>Conseil entretien</label>
+    <input type="textarea" name="conseil_entretien" id="conseil_entretien" placeholder="Conseil entretien" rows="3">
+    <label>Ticket achat</label>
+    <input type="file" name="ticket_achat" id="ticket_achat" placeholder="Ticket achat">
+    <label>Manuel</label>
+    <input type="file" name="manuel" id="manuel" placeholder="Manuel">
+    <input type="submit" value="Ajouter" onclick="validateForm()">
 </form>
+<script src="script.js"></script>
