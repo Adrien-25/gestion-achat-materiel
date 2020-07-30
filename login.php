@@ -3,11 +3,11 @@
 /*Connexion à la base de donnée*/
 require_once('db.php');
   /*Si la session est déja lancé, l'utilisateur est connecté*/
-/*  session_start();
+ session_start();
  if(!empty($_SESSION['identifiant'])){
    header('Location: index.php');
  }
- */
+
 
 /* élément twig */
 require_once 'vendor/autoload.php';
@@ -38,7 +38,7 @@ if(!isset($_SESSION['identifiant'])){
     $sth->execute();
 
     //On recupère le résultat de la requête
-    $result = $sth->fetch(PDO::FETCH_ASSOC); 
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC); 
 
     $identifiant = $result['identifiant'];
     $mot_de_passe = $result['mot_de_passe'];
