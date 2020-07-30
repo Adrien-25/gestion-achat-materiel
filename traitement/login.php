@@ -1,12 +1,23 @@
   
 <?php
 /*Connexion à la base de donnée*/
+<<<<<<< HEAD:traitement/login.php
 require_once ('db.php');
 /*Si la session est déja lancé, l'utilisateur est connecté*/
 session_start();
 if(!empty($_SESSION['identifiant'])){
   header('Location: ../');
 }
+=======
+require_once('db.php');
+  /*Si la session est déja lancé, l'utilisateur est connecté*/
+ session_start();
+ if(!empty($_SESSION['identifiant'])){
+   header('Location: index.php');
+ }
+
+
+>>>>>>> 6708137c8411388e0d556bdf1e4c2587c1e707c1:login.php
 /* élément twig */
 require_once '../vendor/autoload.php';
 

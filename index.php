@@ -1,11 +1,14 @@
 <?php
+/*TWIG*/
 require_once 'vendor/autoload.php';
-
-
 $loader = new \Twig\Loader\FilesystemLoader('templates');
-$twig = new \Twig\Environment($loader, [
+$twig = new \Twig\Environment($loader, array(
     'cache' => false,
-]);
+    'debug' => true,
+));
+$twig->addExtension(new \Twig\Extension\DebugExtension());
+
+
 
 session_start();
 /*Connexion base de donnée*/
@@ -17,6 +20,10 @@ if(empty($_SESSION['identifiant'])){
 
 echo '<a href="traitement/logout.php">Déconnexion</a><br>';
 echo '<a href="traitement/ajouter.php">Ajouter</a><br>';
+
+
+
+
 
 
 //Préparation de la requête
@@ -31,5 +38,6 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT,IntlDateFormatter::NONE);
 
 $template = $twig->load('pages/index.html.twig');
-echo $template->render();
+echo $template->render(['liste_produits' => $result]);
+
 ?>
