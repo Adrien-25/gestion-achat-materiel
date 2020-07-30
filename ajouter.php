@@ -62,7 +62,7 @@ if ( count($_POST) > 0){
     $sth->bindParam(':categorie', $categorie, PDO::PARAM_STR);
     $sth->bindValue(':date_achat', strftime("%Y-%m-%d",strtotime($date_achat)), PDO::PARAM_STR);
     $sth->bindValue(':date_fin_garantie', strftime("%Y-%m-%d",strtotime($date_fin_garantie)), PDO::PARAM_STR);
-    $sth->bindParam(':prix', $prix, PDO::PARAM_STR);
+    $sth->bindParam(':prix', $prix, PDO::PARAM_INT);
     $sth->bindParam(':conseil_entretien', $conseil_entretien, PDO::PARAM_STR);
     $sth->bindParam(':ticket_achat', $ticket_achat, PDO::PARAM_STR);
     $sth->bindParam(':manuel', $manuel, PDO::PARAM_STR);
@@ -76,8 +76,13 @@ Nom des input/select
 id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel
 */
 ?>
-<a href="">Acceuil</a>
-<form action="" method="post" name="formAdd" id="formAdd">
+<a href="index.php">Acceuil</a>
+<form action="ajouter.php" method="post" name="formAdd" id="formAdd">
+    <input type="radio"  name="place" id="adresse_radio" value="adresseRadio"checked>
+    <label>Adresse</label>
+    <input type="radio"  name="place" id="url-radio" value="urlRadio">
+    <label>url</label>
+
     <label>Adresse</label>
     <input type="text" name="adresse" id="adresse" placeholder="Adresse" class="formInput">
     <label>Url</label>
@@ -85,9 +90,9 @@ id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix
     <label>Nom</label>
     <input type="text" name="nom" id="nom" placeholder="Nom" class="formInput">
     <label>Référence</label>
-    <input type="text" name="categorie" id="categorie" placeholder="Référence" class="formInput">
+    <input type="text" name="reference" id="reference" placeholder="Référence" class="formInput">
     <label>Catégorie</label>
-    <input type="text" name="reference" id="reference" placeholder="Catégorie" class="formInput">
+    <input type="text" name="categorie" id="categorie" placeholder="Catégorie" class="formInput">
     <label>Date d'achat</label>
     <input type="date" name="date_achat" id="date_achat" placeholder="Date d'achat" class="formInput">
     <label>Date de fin de garantie</label>
@@ -100,6 +105,6 @@ id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix
     <input type="file" name="ticket_achat" id="ticket_achat" placeholder="Ticket achat" class="formInput">
     <label>Manuel</label>
     <input type="file" name="manuel" id="manuel" placeholder="Manuel" class="formInput">
-    <input type="button" value="Ajouter" id="formSubmit" onclick="validateForm()">
+    <input type="submit" value="Ajouter" id="formSubmit">
 </form>
 <script src="script.js"></script>
