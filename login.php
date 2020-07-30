@@ -1,21 +1,22 @@
   
 <?php
 /*Connexion à la base de donnée*/
-require_once('db.php');
-  /*Si la session est déja lancé, l'utilisateur est connecté*/
- session_start();
- if(!empty($_SESSION['identifiant'])){
-   header('Location: index.php');
- }
-
-
+require_once ('db.php');
+/*Si la session est déja lancé, l'utilisateur est connecté*/
+session_start();
+if(!empty($_SESSION['identifiant'])){
+  header('Location:""');
+}
 /* élément twig */
 require_once 'vendor/autoload.php';
+
 
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
+    'debug' => true,
 ]);
+$twig->addExtension(new \Twig\Extension\DebugExtension());
 
 $identifiant = "";
 $mot_de_passe = "";

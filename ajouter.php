@@ -49,7 +49,6 @@ if ( count($_POST) > 0){
     if(strlen(trim($_POST['manuel'])) !==0 ){
         $manuel = trim($_POST['manuel']);
     }
-    var_dump($date_achat);
     //Ajout du contenu du formulaire dans la table materiel 
     $sql = "insert into materiel(adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel) VALUES(:adresse,:url,:nom,:reference,:categorie,:date_achat,:date_fin_garantie,:prix,:conseil_entretien,:ticket_achat,:manuel)";
     
@@ -77,30 +76,30 @@ Nom des input/select
 id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel
 */
 ?>
-<a href="index.php">Acceuil</a>
-<form action="" method="post" name="ajout">
+<a href="">Acceuil</a>
+<form action="" method="post" name="formAdd" id="formAdd">
     <label>Adresse</label>
-    <input type="text" name="adresse" id="adresse" placeholder="Adresse">
+    <input type="text" name="adresse" id="adresse" placeholder="Adresse" class="formInput">
     <label>Url</label>
-    <input type="text" name="url" id="url" placeholder="Url">
+    <input type="text" name="url" id="url" placeholder="Url" class="formInput">
     <label>Nom</label>
-    <input type="text" name="nom" id="nom" placeholder="Nom">
+    <input type="text" name="nom" id="nom" placeholder="Nom" class="formInput">
     <label>Référence</label>
-    <input type="text" name="categorie" id="categorie" placeholder="Référence">
+    <input type="text" name="categorie" id="categorie" placeholder="Référence" class="formInput">
     <label>Catégorie</label>
-    <input type="text" name="reference" id="reference" placeholder="Catégorie">
+    <input type="text" name="reference" id="reference" placeholder="Catégorie" class="formInput">
     <label>Date d'achat</label>
-    <input type="date" name="date_achat" id="date_achat" placeholder="Date d'achat">
+    <input type="date" name="date_achat" id="date_achat" placeholder="Date d'achat" class="formInput">
     <label>Date de fin de garantie</label>
-    <input type="date" name="date_fin_garantie" id="date_fin_garantie" placeholder="Date de fin de garantie">
+    <input type="date" name="date_fin_garantie" id="date_fin_garantie" placeholder="Date de fin de garantie" class="formInput">
     <label>Prix</label>
-    <input type="text" name="prix" id="prix" placeholder="Prix">
+    <input type="text" name="prix" id="prix" placeholder="Prix" class="formInput">
     <label>Conseil entretien</label>
-    <input type="textarea" name="conseil_entretien" id="conseil_entretien" placeholder="Conseil entretien" rows="3">
+    <input type="textarea" name="conseil_entretien" id="conseil_entretien" placeholder="Conseil entretien" rows="3" class="formInput">
     <label>Ticket achat</label>
-    <input type="file" name="ticket_achat" id="ticket_achat" placeholder="Ticket achat">
+    <input type="file" name="ticket_achat" id="ticket_achat" placeholder="Ticket achat" class="formInput">
     <label>Manuel</label>
-    <input type="file" name="manuel" id="manuel" placeholder="Manuel">
-    <input type="submit" value="Ajouter" onclick="validateForm()">
+    <input type="file" name="manuel" id="manuel" placeholder="Manuel" class="formInput">
+    <input type="button" value="Ajouter" id="formSubmit" onclick="validateForm()">
 </form>
 <script src="script.js"></script>
