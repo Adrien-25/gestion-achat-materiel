@@ -15,7 +15,7 @@ if(isset($_GET['id']) && isset($_GET['edit'])){
     //Si pas de résultat de la requête data est booleen
     if(gettype($data) === "boolean"){
         //On redirige la personne sur la page index
-        header('Location: ../index.php');
+        header('Location: index.php');
 
         //On arrête le script
         exit;
@@ -54,7 +54,7 @@ if(isset($_GET['id']) && isset($_GET['edit'])){
 
     $sth->execute();
     //Redirection après insertion
-    //header('Location: ../index.php');  
+    //header('Location: index.php');  
 }
 
 ?>

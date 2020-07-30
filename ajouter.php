@@ -69,14 +69,14 @@ if ( count($_POST) > 0){
 
     $sth->execute();
     //Redirection après insertion
-    //header('Location: ../index.php');  
+    //header('Location: index.php');  
 }
 /*
 Nom des input/select
 id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel
 */
 ?>
-<a href="../">Acceuil</a>
+<a href="">Acceuil</a>
 <form action="" method="post" name="formAdd" id="formAdd">
     <label>Adresse</label>
     <input type="text" name="adresse" id="adresse" placeholder="Adresse" class="formInput">

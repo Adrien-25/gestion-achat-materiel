@@ -8,22 +8,13 @@ $twig = new \Twig\Environment($loader, array(
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-
-
 session_start();
 /*Connexion base de donnée*/
-require_once 'traitement/db.php';
+require_once 'db.php';
 /*Test de connexion*/
 if(empty($_SESSION['identifiant'])){
-    header('Location: traitement/login.php');
+    header('Location: login.php');
 } 
-
-echo '<a href="traitement/logout.php">Déconnexion</a><br>';
-echo '<a href="traitement/ajouter.php">Ajouter</a><br>';
-
-
-
-
 
 
 //Préparation de la requête

@@ -1,30 +1,22 @@
   
 <?php
 /*Connexion à la base de donnée*/
-<<<<<<< HEAD:traitement/login.php
 require_once ('db.php');
 /*Si la session est déja lancé, l'utilisateur est connecté*/
 session_start();
 if(!empty($_SESSION['identifiant'])){
-  header('Location: ../');
+  header('Location:""');
 }
-=======
-require_once('db.php');
-  /*Si la session est déja lancé, l'utilisateur est connecté*/
- session_start();
- if(!empty($_SESSION['identifiant'])){
-   header('Location: index.php');
- }
-
-
->>>>>>> 6708137c8411388e0d556bdf1e4c2587c1e707c1:login.php
 /* élément twig */
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('../templates');
+
+$loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
+    'debug' => true,
 ]);
+$twig->addExtension(new \Twig\Extension\DebugExtension());
 
 $identifiant = "";
 $mot_de_passe = "";
@@ -46,7 +38,7 @@ if(!isset($_SESSION['identifiant'])){
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['identifiant'] = $identifiant; 
-        header('Location: ../index.php');
+        header('Location: index.php');
       }else {
           $msg = 'Mauvais indentifiant ou mot de passe';
       }

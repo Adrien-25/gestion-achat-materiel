@@ -17,5 +17,5 @@ if(isset($_GET['id'])){
 
 }
 //Redirection après suppression
-header('Location: ../index.php' );
+header('Location: index.php' );
 ?>
