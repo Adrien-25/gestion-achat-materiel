@@ -9,14 +9,15 @@ $twig = new \Twig\Environment($loader, [
 
 session_start();
 /*Connexion base de donnée*/
-require_once 'db.php';
+require_once 'traitement/db.php';
 /*Test de connexion*/
 if(empty($_SESSION['identifiant'])){
-    header('Location: login.php');
+    header('Location: traitement/login.php');
 } 
 
-echo '<a href="logout.php">Déconnexion</a><br>';
-echo '<a href="ajouter.php">Ajouter</a><br>';
+echo '<a href="traitement/logout.php">Déconnexion</a><br>';
+echo '<a href="traitement/ajouter.php">Ajouter</a><br>';
+
 
 //Préparation de la requête
 $sql= 'SELECT id,adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel';

@@ -5,12 +5,12 @@ require_once ('db.php');
 /*Si la session est déja lancé, l'utilisateur est connecté*/
 session_start();
 if(!empty($_SESSION['identifiant'])){
-  header('Location: index.php');
+  header('Location: ../');
 }
 /* élément twig */
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('templates');
+$loader = new \Twig\Loader\FilesystemLoader('../templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
 ]);
@@ -35,7 +35,7 @@ if(!isset($_SESSION['identifiant'])){
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['identifiant'] = $identifiant; 
-        header('Location: index.php');
+        header('Location: ../index.php');
       }else {
           $msg = 'Mauvais indentifiant ou mot de passe';
       }
