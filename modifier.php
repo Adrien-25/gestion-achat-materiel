@@ -54,7 +54,7 @@ if(isset($_GET['id']) && isset($_GET['edit'])){
 
     $sth->execute();
     //Redirection après insertion
-    //header('Location: index.php');  
+    // header('Location: index.php');  
 }
 
 ?>

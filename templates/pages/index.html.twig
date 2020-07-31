@@ -275,18 +275,7 @@
                                             </div>
                                         </div>
                                         <div class="account-dropdown__body">
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-account"></i>Account</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
-                                            </div>
-                                            <div class="account-dropdown__item">
-                                                <a href="#">
-                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                            </div>
+                                            
                                         </div>
                                         <div class="account-dropdown__footer">
                                             <a href="logout.php">
@@ -322,9 +311,9 @@
                                  <li class="list-group-item">{{produit.adresse}}</li>
                                  {%endif%}
                               <li class="list-group-item">{{produit.prix}} euros</li>
-                              <li class="list-group-item">{{produit.reference}}</li>
-                              <li class="list-group-item">{{produit.date_fin_garantie}}</li>
-                              <li class="list-group-item">{{produit.date_achat}}</li>
+                              <li class="list-group-item">réf: {{produit.reference}}</li>
+                              <li class="list-group-item">Fin de garantie {{produit.date_fin_garantie|date("m/d/Y")}}</li>
+                              <li class="list-group-item">Acheté le  {{produit.date_achat|date("m/d/Y")}}</li>
                               <li class="list-group-item">{{produit.conseil_entretien}}</li>
                                 
                                 <li class="list-group-item">{{produit.ticket_achat}}</li>
@@ -334,7 +323,7 @@
                             </ul>
                             <div class="card-body d-flex justify-content-between align-items-center">
                               <a href="#" class="card-link"><i class="far fa-file-archive"></i></a>
-                              <a href="#" class="card-link"><i class="far fa-trash-alt"></i></a>
+                              <a href="" class="card-link"><i class="far fa-trash-alt"></i></a>
                               
                             </div>
                           </div>
