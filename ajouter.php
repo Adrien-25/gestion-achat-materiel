@@ -26,6 +26,7 @@ $manuel= '';
 if ( count($_POST) > 0){ 
     if(strlen(trim($_POST['adresse'])) !== 0){
         $adresse = trim($_POST['adresse']);
+        var_dump('adresse');
     }
     if(strlen(trim($_POST['url'])) !== 0){
         $url = trim($_POST['url']);
@@ -70,7 +71,7 @@ if ( count($_POST) > 0){
     $sth->bindParam(':categorie', $categorie, PDO::PARAM_STR);
     $sth->bindValue(':date_achat', strftime("%Y-%m-%d",strtotime($date_achat)), PDO::PARAM_STR);
     $sth->bindValue(':date_fin_garantie', strftime("%Y-%m-%d",strtotime($date_fin_garantie)), PDO::PARAM_STR);
-    $sth->bindParam(':prix', $prix, PDO::PARAM_STR);
+    $sth->bindParam(':prix', $prix, PDO::PARAM_INT);
     $sth->bindParam(':conseil_entretien', $conseil_entretien, PDO::PARAM_STR);
     $sth->bindParam(':ticket_achat', $ticket_achat, PDO::PARAM_STR);
     $sth->bindParam(':manuel', $manuel, PDO::PARAM_STR);
@@ -89,5 +90,4 @@ echo $template->render([
     'prix' => $prix, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel
 ]);
 ?>
-
 
