@@ -27,7 +27,6 @@ $manuel= '';
 if ( count($_POST) > 0){ 
     if(strlen(trim($_POST['adresse'])) !== 0){
         $adresse = trim($_POST['adresse']);
-        var_dump('adresse');
     }
     if(strlen(trim($_POST['url'])) !== 0){
         $url = trim($_POST['url']);
@@ -59,12 +58,14 @@ if ( count($_POST) > 0){
     if(strlen(trim($_POST['manuel'])) !==0 ){
         $manuel = trim($_POST['manuel']);
     }
+    
     //Ajout du contenu du formulaire dans la table materiel 
     $sql = "insert into materiel(adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel) VALUES(:adresse,:url,:nom,:reference,:categorie,:date_achat,:date_fin_garantie,:prix,:conseil_entretien,:ticket_achat,:manuel)";
     
     $sth = $dbh->prepare($sql);
     //bindParam important pour se protéger contre l'injection sql et HTML
-    
+    echo $sql;
+
     $sth->bindParam(':adresse', $adresse, PDO::PARAM_STR);
     $sth->bindParam(':url', $url, PDO::PARAM_STR);
     $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
@@ -81,10 +82,6 @@ if ( count($_POST) > 0){
     //Redirection après insertion
     header('Location: index.php');  
 }
-/*
-Nom des input/select
-id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel
-*/
 $template = $twig->load('pages/ajouter.html.twig');
 echo $template->render([
      'prix' => $prix, 'nom' =>$nom, 'adresse' => $adresse, 'url' => $url, 'reference' => $reference, 'categorie' => $categorie, 'date_achat' => $date_achat, 'date_fin_garantie' => $date_fin_garantie, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel, 'avatar' => $_SESSION['identifiant']
