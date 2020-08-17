@@ -13,8 +13,6 @@ $twig = new \Twig\Environment($loader, array(
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-
-
 if(isset($_GET['id'])){
     $sql = 'SELECT adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel WHERE id=:id';
 
@@ -37,7 +35,6 @@ if(isset($_GET['id'])){
 echo'Aurevoir';
 
 if (count($_POST) > 0){ 
-    var_dump('BONJOUR');
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
     $sth = $dbh->prepare($sql);
     //bindParam important pour se protéger contre l'injection sql et HTML
@@ -57,12 +54,8 @@ if (count($_POST) > 0){
 
     $sth->execute();
     //Redirection après insertion
-    //  header('Location: index.php');  
+    //header('Location: index.php');  
 }
-
-
-
-
 
 $template = $twig->load('pages/modifier.html.twig');
 echo $template->render(['modify' => $data, 'avatar' => $_SESSION['identifiant']]);
