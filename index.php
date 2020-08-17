@@ -1,4 +1,7 @@
 <?php
+session_start();
+/*Connexion base de donnée*/
+require_once 'db.php';
 /*TWIG*/
 require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates');
@@ -8,9 +11,7 @@ $twig = new \Twig\Environment($loader, array(
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-session_start();
-/*Connexion base de donnée*/
-require_once 'db.php';
+
 /*Test de connexion*/
 if(empty($_SESSION['identifiant'])){
     header('Location: login.php');
