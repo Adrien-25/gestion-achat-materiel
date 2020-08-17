@@ -16,70 +16,20 @@
         
             
     <div class="form-row">
-        <div class="form-group col-sm-12 col-md-12 col-lg-6 input-group-prepend">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6 input-group-prepend">
             
-                
+            {# <span class="input-group-text" id="addon-wrapping"><i class="zmdi zmdi-file-text"></i></span> #}
             <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté" >
-            <span class="input-group-text" id="addon-wrapping"><i class="zmdi zmdi-file-text"></i></span> 
+           
         </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <input type="text" class="form-control" name="reference" id="reference" placeholder="référence du produit " >
-        </div>
-    </div>
-
-
-
-    <div class="form-row">
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <label>Adresse</label>
-            <input type="radio" name="place" id="adresse_radio" value="adresseRadio"checked>
-            <input type="text" class="form-control" name="adresse" id="adresse" placeholder=" Votre adresse">
-             
-            
-        </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <label>url</label>
-            <input type="radio" name="place" id="url_radio" value="urlRadio">
-                    
-            <input type="text" class="form-control" name="url" id="url" placeholder="Url">
-        </div>
-    </div>
-
-
-    <div class="form-row">
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <label for="date_achat">Date d'achat</label>
-            <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat">
-            
-        </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-6 ">
-            <label for="date_fin_garantie">Date de fin de garantie</label>
-            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie">
-            
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <label for="ticket_achat">Votre ticket d'achat</label>
-            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat">
-        </div>
-        <div class="form-group col-sm-12 col-md-12 col-lg-6">
-            <label for="manuel">Manuel d'utilisation</label>
-            <input  type="file" class="form-control-file input-group-prepend" name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" >
-            
-        </div>
-    </div>
-    
-        
-    
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <textarea name="conseil_entretien" id="conseil_entretien"  cols="30"  placeholder="Vos conseil d'entretien"></textarea>
-            
+            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit " >
         </div>
-        <div class="form-row">
+    </div>
+    <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             
-            <select name="categorie" id="categorie">
+            <select name="categorie" class="custom-select" id="categorie">
                 <option value="">Choississez votre catégorie</option>
                 <option value="1">Loisirs</option>
                 <option value="2">Vêtements</option>
@@ -99,6 +49,57 @@
             <input type="text"  name="prix" placeholder="le prix du produit" id="prix" class="form-control">
         </div>
         
+        
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label>Vente direct</label>
+            <input type="radio" name="place" id="adresse_radio" value="adresseRadio"checked>
+            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce">
+             
+            
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label> e-commerce</label>
+            <input type="radio" name="place" id="url_radio" value="urlRadio">
+                    
+            <input type="text" class="form-control" name="url" id="url" placeholder="Adresse du site e-commerce">
+        </div>
+    </div>
+    
+
+    <div class="form-row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label for="date_achat">Date d'achat</label>
+            <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat">
+            
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
+            <label for="date_fin_garantie">Date de fin de garantie</label>
+            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie">
+            
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label for="ticket_achat">Votre ticket d'achat</label>
+            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat">
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label for="manuel">Manuel d'utilisation</label>
+            <input  type="file" class="form-control-file input-group-prepend" name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" >
+            
+        </div>
+    </div>
+    
+        
+    
+        
+        
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien"></textarea>
         
     </div>
     <div class=" col-sm-12 col-md-12 col-lg-12">
