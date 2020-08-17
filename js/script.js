@@ -46,7 +46,7 @@ formAddId.addEventListener("submit", function(e){
             var ticket_achatInput = document.getElementById('ticket_achat');
             var ticket_achat = ticket_achatInput.value;
             /*MANUEL*/
-            var manuelInput = document.getElementById('manuel').value;
+            var manuelInput = document.getElementById('manuel');
             var manuel = manuelInput.value;
 
             /*Lieux d'achat */

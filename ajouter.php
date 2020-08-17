@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*Connexion base de donnée*/
 require_once 'db.php';
 /*TWIG*/
@@ -78,7 +79,7 @@ if ( count($_POST) > 0){
 
     $sth->execute();
     //Redirection après insertion
-    //header('Location: index.php');  
+    header('Location: index.php');  
 }
 /*
 Nom des input/select
@@ -86,8 +87,7 @@ id, adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix
 */
 $template = $twig->load('pages/ajouter.html.twig');
 echo $template->render([
-    'nom' =>$nom, 'adresse' => $adresse, 'url' => $url, 'reference' => $reference, 'categorie' => $categorie, 'date_achat' => $sate_achat, 'date_fin_garantie' => $date_fin_garantie,
-    'prix' => $prix, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel
+     'prix' => $prix, 'nom' =>$nom, 'adresse' => $adresse, 'url' => $url, 'reference' => $reference, 'categorie' => $categorie, 'date_achat' => $date_achat, 'date_fin_garantie' => $date_fin_garantie, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel, 'avatar' => $_SESSION['identifiant']
 ]);
 ?>
 

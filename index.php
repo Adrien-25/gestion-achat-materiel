@@ -14,7 +14,7 @@ require_once 'db.php';
 /*Test de connexion*/
 if(empty($_SESSION['identifiant'])){
     header('Location: login.php');
-} 
+}
 
 
 //Préparation de la requête
@@ -29,6 +29,7 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT,IntlDateFormatter::NONE);
 
 $template = $twig->load('pages/index.html.twig');
-echo $template->render(['liste_produits' => $result]);
+echo $template->render(['liste_produits' => $result,
+'avatar' => $_SESSION['identifiant']]);
 
 ?>
