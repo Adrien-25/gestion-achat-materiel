@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
     $sth->execute();
     
     $data = $sth->fetch(PDO::FETCH_ASSOC);
-    var_dump($data);
+    
     //Si pas de résultat de la requête data est booleen
     if(gettype($data) === "boolean"){
         //On redirige la personne sur la page index
@@ -46,7 +46,7 @@ if(isset($_GET['id'])){
     $ticket_achat= $data['ticket_achat'];
     $manuel= $data['manuel'];
     $id = $data['id'];
-    $id = htmlentities($_GET['id']);
+     $id = htmlentities($_GET['id']);
 
 
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
@@ -68,13 +68,13 @@ if(isset($_GET['id'])){
 
     $sth->execute();
     //Redirection après insertion
-     header('Location: index.php');  
+    //  header('Location: index.php');  
 }
 
 
 
 
 $template = $twig->load('pages/modifier.html.twig');
-echo $template->render(['avatar' => $_SESSION['identifiant']]);
+echo $template->render(['modify' => $data, 'avatar' => $_SESSION['identifiant']]);
 
 ?>

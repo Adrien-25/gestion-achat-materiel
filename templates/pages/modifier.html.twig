@@ -1,6 +1,7 @@
 {% extends "./base.html.twig" %}
 {% block title %}Modifier{% endblock title %}
 {% block add %}
+{% for datas  in data %}
 <form action="" method="post" name="formAdd" id="formAdd">
          
     <div class="form-row">
@@ -88,8 +89,9 @@
         
     </div>
     <div class=" col-sm-12 col-md-12 col-lg-12">
-        <input type="submit"  value="Ajouter" class="btn btn-primary btn-lg btn-block" id="formSubmit">
+        <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
        
     </div>
 </form> 
+{% endfor %}
 {% endblock add %}
