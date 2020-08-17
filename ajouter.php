@@ -58,6 +58,7 @@ if ( count($_POST) > 0){
     if(strlen(trim($_POST['manuel'])) !==0 ){
         $manuel = trim($_POST['manuel']);
     }
+    var_dump($_POST);
     
     //Ajout du contenu du formulaire dans la table materiel 
     $sql = "insert into materiel(adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel) VALUES(:adresse,:url,:nom,:reference,:categorie,:date_achat,:date_fin_garantie,:prix,:conseil_entretien,:ticket_achat,:manuel)";
@@ -77,6 +78,8 @@ if ( count($_POST) > 0){
     $sth->bindParam(':conseil_entretien', $conseil_entretien, PDO::PARAM_STR);
     $sth->bindParam(':ticket_achat', $ticket_achat, PDO::PARAM_STR);
     $sth->bindParam(':manuel', $manuel, PDO::PARAM_STR);
+
+    move_uploaded_file($_FILES['ticket_achat']['tmp_name'], 'media/'.basename($_FILES['fichier']['name']));
 
     $sth->execute();
     //Redirection après insertion
