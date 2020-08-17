@@ -14,7 +14,7 @@ formAddId.addEventListener("submit", function(e){
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var submitTest = 0;
+            var submitTest = 1;
             /*ADRESSE*/
             var adresseInput = document.getElementById('adresse');
             var adresse = adresseInput.value;
@@ -56,58 +56,72 @@ formAddId.addEventListener("submit", function(e){
             
             if (adresseRadio.checked && adresse == ""){
                 adresseInput.classList.add('emptyInput');
+                submitTest = 0;
             } else {
                 adresseInput.classList.remove('emptyInput');
             }
             if (urlRadio.checked && url == ""){
                 urlRadio.classList.add('emptyInput');
+                submitTest = 0;
             } else {
                 urlRadio.classList.remove('emptyInput');
             }
             if (nom == ""){
                 nomInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 nomInput.classList.remove('emptyInput');
             }
             if (reference == ""){
                 referenceInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 referenceInput.classList.remove('emptyInput');
             }
             if (categorie == ""){
                 categorieInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 categorieInput.classList.remove('emptyInput');
             }
             if (date_achat == ""){
                 date_achatInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 date_achatInput.classList.remove('emptyInput');
             }
             if (date_fin_garantie == ""){
                 date_fin_garantieInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 date_fin_garantieInput.classList.remove('emptyInput');
             }
             if ((prix == "") || (isNaN(prix) == true)){
                 prixInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 prixInput.classList.remove('emptyInput');
             }
             if (conseil_entretien == ""){
                 conseil_entretienInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 conseil_entretienInput.classList.remove('emptyInput');
             }
             if (ticket_achat == ""){
                 ticket_achatInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 ticket_achatInput.classList.remove('emptyInput');
             }
             if (manuel == ""){
                 manuelInput.classList.add('emptyInput');
+                submitTest = 0;
             }else {
                 manuelInput.classList.remove('emptyInput');
+            }
+            if (submitTest == 1){
+                formAddId.submit();
             }
             
         }
