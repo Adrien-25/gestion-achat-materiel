@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
     $sth->execute();
     
     $data = $sth->fetch(PDO::FETCH_ASSOC);
-    var_dump($data);
+
     //Si pas de résultat de la requête data est booleen
     if(gettype($data) === "boolean"){
         //On redirige la personne sur la page index
@@ -34,19 +34,12 @@ if(isset($_GET['id'])){
         //On arrête le script
         exit;
     }
-    $adresse = $data['adresse'];
-    $url = $data['url'];
-    $nom = $data['nom'];
-    $reference = $data['reference'];
-    $categorie = $data['categorie'];
-    $date_achat= $data['date_achat'];
-    $date_fin_garantie= $data['date_fin_garantie'];
-    $prix= $data['prix'];
-    $conseil_entretien= $data['conseil_entretien'];
-    $ticket_achat= $data['ticket_achat'];
-    $manuel= $data['manuel'];
-    $id = $data['id'];
-    $id = htmlentities($_GET['id']);
+  
+}
+echo'Aurevoir';
+if (count($_POST) > 0){ 
+    var_dump('BONJOUR');
+    
 
 
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
@@ -68,10 +61,11 @@ if(isset($_GET['id'])){
 
     $sth->execute();
     //Redirection après insertion
-     header('Location: index.php');  
+    //header('Location: index.php');  
+
+
+
 }
-
-
 
 
 $template = $twig->load('pages/modifier.html.twig');
