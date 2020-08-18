@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
     $conseil_entretien= $data['conseil_entretien'];
     $ticket_achat= $data['ticket_achat'];
     $manuel= $data['manuel'];
-    $id = $data['id'];
+    // $id = $data['id'];
      $id = htmlentities($_GET['id']);
 
 
@@ -68,13 +68,16 @@ if(isset($_GET['id'])){
 
     $sth->execute();
     //Redirection après insertion
-    //  header('Location: index.php');  
+    // header('Location: index.php');  
 }
 
 
-
-
 $template = $twig->load('pages/modifier.html.twig');
-echo $template->render(['modify' => $data, 'avatar' => $_SESSION['identifiant']]);
+echo $template->render(['modify' => $data,'varcategorie' => $categorie, 'avatar' => $_SESSION['identifiant']]);
 
 ?>
+
+
+
+
+

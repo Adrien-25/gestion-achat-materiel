@@ -1,97 +1,97 @@
 {% extends "./base.html.twig" %}
 {% block title %}Modifier{% endblock title %}
 {% block add %}
-{% for datas  in data %}
 <form action="" method="post" name="formAdd" id="formAdd">
-         
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6 input-group-prepend">
             
             {# <span class="input-group-text" id="addon-wrapping"><i class="zmdi zmdi-file-text"></i></span> #}
-            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté" >
+            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté"  value="{{modify.nom}}">
            
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit " >
+            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit " value="{{modify.reference}}" >
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            
             <select name="categorie" class="custom-select" id="categorie">
-                <option value="">Choississez votre catégorie</option>
-                <option value="1">Loisirs</option>
-                <option value="2">Vêtements</option>
-                <option value="3">Multimédia</option>
-                <option value="4">jeux & jouets</option>
-                <option value="5">Vélos</option>
-                <option value="6">Téléphonie</option>
-                <option value="7">Electroménager</option>
-                <option value="8">Bricolage</option>
-                <option value="9">Maison</option>
-                <option value="10">Mode</option>
+                {% set categoriesarray = ["Loisirs", "Vêtements", "Multimédia", "jeux & jouets", "Vélos", "Téléphonie", "Electroménager", "Bricolage", "Maison", "Mode", "Autres" ] %}
+                {% for categories in categoriesarray %}
+                {% set select = '' %}
+                {% if categories == varcategorie %}
+                {% set select = 'selected' %}
+                {% endif %}
+                <option value="{{categories}}" {{select }}>{{categories}}</option>
+                {% endfor %}
             </select>
-                
-            
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6" >
-            
-            <input type="text"  name="prix" placeholder="le prix du produit" id="prix" class="form-control">
+            <input type="text"  name="prix" placeholder="le prix du produit" id="prix"  class="form-control" value="{{modify.prix}}">
         </div>
-        
-        
     </div>
-
-
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label>Vente direct</label>
             <input type="radio" name="place" id="adresse_radio" value="adresseRadio"checked>
-            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce">
-             
-            
-        </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <label> e-commerce</label>
-            <input type="radio" name="place" id="url_radio" value="urlRadio">
-                    
-            <input type="text" class="form-control" name="url" id="url" placeholder="Adresse du site e-commerce">
-        </div>
+            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce" value="{{modify.adresse}}">
     </div>
-    
-
-    <div class="form-row">
-        <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <label for="date_achat">Date d'achat</label>
-            <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat">
-            
-        </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
-            <label for="date_fin_garantie">Date de fin de garantie</label>
-            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie">
-            
-        </div>
+    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+        <label> e-commerce</label>
+        <input type="radio" name="place" id="url_radio" value="urlRadio">
+        <input type="text" class="form-control" name="url" id="url"  placeholder="Adresse du site e-commerce" value="{{modify.url}}">
     </div>
-    <div class="form-row">
-        <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <label for="ticket_achat">Votre ticket d'achat</label>
-            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat">
-        </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6 custom-file">
-            <label for="manuel">Manuel d'utilisation</label>
-            <input  type="file" class="form-control-file " name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" >
-            
-        </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+        <label for="date_achat">Date d'achat</label>
+        <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat" value="{{modify.date_achat}}" >
     </div>
-      
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien"></textarea>
+    <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
+        <label for="date_fin_garantie">Date de fin de garantie</label>
+        <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie" value="{{modify.date_fin_garantie}}" >
         
     </div>
-    <div class=" col-sm-12 col-md-12 col-lg-12">
-        <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
-       
+</div>
+<div class="form-row">
+    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+        <label for="ticket_achat">Votre ticket d'achat</label>
+        <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat" value="{{modify.ticket_achat}}">
     </div>
+    <div class="form-group col-sm-12 col-md-6 col-lg-6 custom-file">
+        <label for="manuel">Manuel d'utilisation</label>
+        <input  type="file" class="form-control-file " name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" value="{{modify.manuel}}">
+    </div>
+</div>
+<div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien">{{modify.conseil_entretien}}</textarea>
+</div>
+<div class=" col-sm-12 col-md-12 col-lg-12">
+    <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
+</div>
 </form> 
-{% endfor %}
 {% endblock add %}
+   
+   
+              
+                        
+                   
+               
+    
+                
+            
+            
+        
+        
+
+
+             
+            
+                    
+    
+
+            
+            
+      
+        
+       
