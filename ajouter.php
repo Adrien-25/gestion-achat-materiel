@@ -90,7 +90,6 @@ if ( count($_POST) > 0){
 }
 $template = $twig->load('pages/ajouter.html.twig');
 echo $template->render([
-     'prix' => $prix, 'nom' =>$nom, 'adresse' => $adresse, 'url' => $url, 'reference' => $reference, 'categorie' => $categorie, 'date_achat' => $date_achat, 'date_fin_garantie' => $date_fin_garantie, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel, 'avatar' => $_SESSION['identifiant']
-]);
+     'prix' => $prix, 'nom' =>$nom, 'adresse' => $adresse, 'url' => $url, 'reference' => $reference, 'categorie' => $categorie, 'date_achat' => $date_achat, 'date_fin_garantie' => $date_fin_garantie, 'conseil_entretien' => $conseil_entretien, 'ticket_achat' => $ticket_achat, 'manuel' => $manuel, 'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
 ?>
 
