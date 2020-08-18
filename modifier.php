@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
     // $id = $data['id'];
      $id = htmlentities($_GET['id']);
 
-
+}
 if (count($_POST) > 0){ 
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
     $sth = $dbh->prepare($sql);
@@ -72,13 +72,4 @@ if (count($_POST) > 0){
 
 $template = $twig->load('pages/modifier.html.twig');
 echo $template->render(['modify' => $data,'varcategorie' => $categorie, 'avatar' => $_SESSION['identifiant'], 'email' => $_SESSION['email']]);
-
 ?>
-
-
-
- 
-
-
-
-
