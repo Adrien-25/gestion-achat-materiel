@@ -42,7 +42,6 @@
         <div class="page-wrapper">
             <!-- HEADER MOBILE-->
            
-                
             <header class="header-mobile d-block d-lg-none">
                 <div class="header-mobile__bar">
                     <div class="container-fluid">
@@ -83,23 +82,6 @@
                                     <a class="js-arrow" href="#">
                                         <i class="fas fa-trash-alt"></i>Supprimer
                                         </a>
-                                 
-                                </li>
-                                <li class="has-sub">
-                                    <a class="js-arrow" href="#">
-                                        <i class="fas fa-ticket-alt"></i>Tickets
-                                        </a>
-                                 
-                                </li>
-                                <li class="has-sub">
-                                    <a class="js-arrow" href="#">
-                                        <i class="fas fa-book"></i>Manuels
-                                        </a>
-                                 
-                                </li>
-                               
-                               
-                                
                             </ul>
                         </ul>
                     </div>
@@ -129,33 +111,6 @@
                                     </a>
                              
                             </li>
-                            <!-- <li class="has-sub">
-                                <a class="js-arrow" href="modifier.php">
-                                    <i class="fas fa-undo-alt"></i>Modifier
-                                    </a>
-                             
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="supprimer.php">
-                                    <i class="fas fa-trash-alt"></i>Supprimer
-                                    </a>
-                             
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-ticket-alt"></i>Tickets
-                                    </a>
-                             
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-book"></i>Manuels
-                                    </a>
-                             
-                            </li> -->
-                            
-                           
-                            
                         </ul>
                     </nav>
                 </div>
@@ -169,7 +124,7 @@
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
                             <div class="header-wrap">
-                                <form class="form-header" action="" method="POST">
+                                <form class="form-header" action="index.php" method="POST">
                                     <input class="au-input au-input--xl" type="text" name="search" placeholder="Rechercher un produit" />
                                     <button class="au-btn--submit" type="submit">
                                         <i class="zmdi zmdi-search"></i>
@@ -196,15 +151,12 @@
                                                         <h5 class="name">
                                                             <a href="#">{{avatar}}</a>
                                                         </h5>
-                                                        <span class="email">johndoe@example.com</span>
+                                                        <span class="email">{{email}}</span>
                                                     </div>
-                                                </div>
-                                                <div class="account-dropdown__body">
-                                                    
                                                 </div>
                                                 <div class="account-dropdown__footer">
                                                     <a href="logout.php">
-                                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                                        <i class="zmdi zmdi-power"></i>Déconnexion</a>
                                                 </div>
                                             </div>
                                         </div>

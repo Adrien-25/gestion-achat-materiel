@@ -13,8 +13,6 @@ $twig = new \Twig\Environment($loader, array(
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-
-
 if(isset($_GET['id'])){
     $sql = 'SELECT adresse, url, nom, reference, categorie, date_achat, date_fin_garantie, prix, conseil_entretien, ticket_achat, manuel FROM materiel WHERE id=:id';
 
@@ -25,7 +23,6 @@ if(isset($_GET['id'])){
     $sth->execute();
     
     $data = $sth->fetch(PDO::FETCH_ASSOC);
-    
     //Si pas de résultat de la requête data est booleen
     if(gettype($data) === "boolean"){
         //On redirige la personne sur la page index
@@ -49,6 +46,7 @@ if(isset($_GET['id'])){
      $id = htmlentities($_GET['id']);
 
 
+if (count($_POST) > 0){ 
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
     $sth = $dbh->prepare($sql);
     //bindParam important pour se protéger contre l'injection sql et HTML
@@ -73,10 +71,13 @@ if(isset($_GET['id'])){
 
 
 $template = $twig->load('pages/modifier.html.twig');
-echo $template->render(['modify' => $data,'varcategorie' => $categorie, 'avatar' => $_SESSION['identifiant']]);
+echo $template->render(['modify' => $data,'varcategorie' => $categorie, 'avatar' => $_SESSION['identifiant'], 'email' => $_SESSION['email']]);
 
 ?>
 
+
+
+ 
 
 
 
