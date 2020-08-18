@@ -25,7 +25,6 @@ $manuel= '';
 
 //Si on reçoit l'id dans l'url et qu'on a soumis le formulaire
 if ( count($_POST) > 0){ 
-    var_dump($_FILES['ticket_achat']['name']);
     move_uploaded_file($_FILES['ticket_achat']['name'], 'media/'.basename($_FILES['ticket_achat']['name']));
     move_uploaded_file($_FILES['manuel']['name'], 'media/'.basename($_FILES['manuel']['name']));
 
@@ -81,12 +80,9 @@ if ( count($_POST) > 0){
     $sth->bindParam(':ticket_achat', $ticket_achat, PDO::PARAM_STR);
     $sth->bindParam(':manuel', $manuel, PDO::PARAM_STR);
 
-
-    
-    
     $sth->execute();
     //Redirection après insertion
-    //header('Location: index.php');  
+    header('Location: index.php');  
 }
 $template = $twig->load('pages/ajouter.html.twig');
 echo $template->render([
