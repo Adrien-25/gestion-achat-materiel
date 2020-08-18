@@ -86,7 +86,7 @@ if ( count($_POST) > 0){
     
     $sth->execute();
     //Redirection après insertion
-    //header('Location: index.php');  
+    header('Location: index.php');  
 }
 $template = $twig->load('pages/ajouter.html.twig');
 echo $template->render([
