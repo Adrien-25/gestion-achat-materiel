@@ -25,9 +25,8 @@ $manuel= '';
 
 //Si on reçoit l'id dans l'url et qu'on a soumis le formulaire
 if ( count($_POST) > 0){ 
-
-    move_uploaded_file($_FILES['ticket_achat']['tmp_name'], 'media/'.basename($_FILES['ticket_achat']['name']));
-    move_uploaded_file($_FILES['manuel']['tmp_name'], 'media/'.basename($_FILES['manuel']['name']));
+    move_uploaded_file($_FILES['ticket_achat']['name'], 'media/'.basename($_FILES['ticket_achat']['name']));
+    move_uploaded_file($_FILES['manuel']['name'], 'media/'.basename($_FILES['manuel']['name']));
 
     if(strlen(trim($_POST['adresse'])) !== 0){
         $adresse = trim($_POST['adresse']);
@@ -57,10 +56,10 @@ if ( count($_POST) > 0){
         $conseil_entretien = trim($_POST['conseil_entretien']);
     }
     if(strlen(trim($_FILES['ticket_achat']['tmp_name'])) !==0 ){
-        $ticket_achat = trim($_FILES['ticket_achat']['tmp_name']);
+        $ticket_achat = trim($_FILES['ticket_achat']['name']);
     }
     if(strlen(trim($_FILES['manuel']['tmp_name'])) !==0 ){
-        $manuel = trim($_FILES['manuel']['tmp_name']);
+        $manuel = trim($_FILES['manuel']['name']);
     }
     
     //Ajout du contenu du formulaire dans la table materiel 
@@ -81,9 +80,6 @@ if ( count($_POST) > 0){
     $sth->bindParam(':ticket_achat', $ticket_achat, PDO::PARAM_STR);
     $sth->bindParam(':manuel', $manuel, PDO::PARAM_STR);
 
-
-    
-    
     $sth->execute();
     //Redirection après insertion
     header('Location: index.php');  

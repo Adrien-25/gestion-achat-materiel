@@ -53,7 +53,6 @@ if (undefined != formAdd){
                 /*Lieux d'achat */
                 var adresseRadio = document.getElementById('adresse_radio');
                 var urlRadio = document.getElementById('url_radio');
-                console.log(adresseRadio.value);
                 
                 if (adresseRadio.checked && adresse == ""){
                     adresseInput.classList.add('emptyInput');
@@ -62,10 +61,10 @@ if (undefined != formAdd){
                     adresseInput.classList.remove('emptyInput');
                 }
                 if (urlRadio.checked && url == ""){
-                    urlRadio.classList.add('emptyInput');
+                    urlInput.classList.add('emptyInput');
                     submitTest = 0;
                 } else {
-                    urlRadio.classList.remove('emptyInput');
+                    urlInput.classList.remove('emptyInput');
                 }
                 if (nom == ""){
                     nomInput.classList.add('emptyInput');
