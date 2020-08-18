@@ -57,6 +57,7 @@ if (count($_POST) > 0){
 }
 
 $template = $twig->load('pages/modifier.html.twig');
-echo $template->render(['modify' => $data, 'avatar' => $_SESSION['identifiant']]);
+echo $template->render(['modify' => $data, 'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
+
 
 ?>
