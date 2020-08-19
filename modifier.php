@@ -2,8 +2,6 @@
 session_start();
 /*Connexion base de donnée*/
 require_once 'db.php';
-
-
 // TWIG
 require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates');
@@ -32,29 +30,13 @@ if(isset($_GET['id'])){
         exit;
     }
     $categorie = $data['categorie'];
-    /*
-    $adresse = $data['adresse'];
-    $url = $data['url'];
-    $nom = $data['nom'];
-    $reference = $data['reference'];
-    
-    $date_achat= $data['date_achat'];
-    $date_fin_garantie= $data['date_fin_garantie'];
-    $prix= $data['prix'];
-    $conseil_entretien= $data['conseil_entretien'];
-    $ticket_achat= $data['ticket_achat'];
-    $manuel= $data['manuel'];
-    // $id = $data['id'];
-    $id = htmlentities($_GET['id']);
-    */
 }
 
 if (count($_POST) > 0){  
-
     $sql = 'UPDATE materiel SET adresse=:adresse, url= :url, nom=:nom, reference=:reference, categorie=:categorie, date_achat=:date_achat, date_fin_garantie=:date_fin_garantie, prix=:prix, conseil_entretien=:conseil_entretien, ticket_achat=:ticket_achat,manuel=:manuel WHERE id=:id';
+
     $sth = $dbh->prepare($sql);
 
-    //bindParam important pour se protéger contre l'injection sql et HTML
     $adresse = $_POST['adresse'];
     $url = $_POST['url'];
     $nom = $_POST['nom'];
@@ -64,11 +46,19 @@ if (count($_POST) > 0){
     $date_fin_garantie= $_POST['date_fin_garantie'];
     $prix= $_POST['prix'];
     $conseil_entretien= $_POST['conseil_entretien'];
-    $ticket_achat= $_POST['ticket_achat'];
-    $manuel= $_POST['manuel'];
-    // $id = $_POST['id'];
+    if (($_FILES['ticket_achat']['size']) != 0){
+        $ticket_achat= $_FILES['ticket_achat']['name'];
+    } else {
+        $ticket_achat = $data['ticket_achat'];
+    }
+    if (($_FILES['manuel']['size']) != 0){
+        $manuel = $_FILES['manuel']['name'];
+    } else {
+        $manuel = $data['manuel'];
+    }
     $id = htmlentities($_GET['id']);
 
+    //bindParam important pour se protéger contre l'injection sql et HTML
     $sth->bindParam(':adresse', $adresse, PDO::PARAM_STR);
     $sth->bindParam(':url', $url, PDO::PARAM_STR);
     $sth->bindParam(':nom', $nom, PDO::PARAM_STR);
