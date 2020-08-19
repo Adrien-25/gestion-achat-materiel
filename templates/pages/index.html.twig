@@ -9,19 +9,21 @@
     <img class="card-img-top" src="images/{{produit.categorie}}.jpg" alt="Card image cap">
     <div class="card-body d-flex justify-content-between  ">
       <h5 class="card-title">{{produit.nom}}</h5>
-      <p class="card-text"><span>{{produit.prix}}</span> <i class="fas fa-euro-sign"></i></p>
+      <p class="card-text"><span style=" color: red;">{{produit.prix}} <i class="fas fa-euro-sign"></i></span></p>
     </div>
 
-    <ul class="list-group list-group-flush">
+    <ul class="list-group ">
+      <li class="list-group-item">réf: {{produit.reference}}</li>
       {%if produit.adresse == empty  %}
        <li class="list-group-item">{{produit.url}}</li>
       {%else%}
        <li class="list-group-item">{{produit.adresse}}</li>
       {%endif%}
       {# <li class="list-group-item">{{produit.prix}} Euros</li> #}
-      <li class="list-group-item">réf: {{produit.reference}}</li>
-      <li class="list-group-item">Fin de garantie {{produit.date_fin_garantie|date("m/d/Y")}}</li>
+      
       <li class="list-group-item">Acheté le {{produit.date_achat|date("m/d/Y")}}</li>
+      <li class="list-group-item">Fin de garantie {{produit.date_fin_garantie|date("m/d/Y")}}</li>
+     
       <li class="list-group-item">{{produit.conseil_entretien}}</li>
       <li class="list-group-item"><a href="media/{{produit.ticket_achat}}"target="_blank">{{produit.ticket_achat}}</a></li>
       <li class="list-group-item"><a href="media/{{produit.manuel}}"target="_blank">{{produit.manuel}}</a></li>
