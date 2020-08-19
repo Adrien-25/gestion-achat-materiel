@@ -24,8 +24,8 @@ $ticket_achat= '';
 $manuel= '';
 //Si on reçoit l'id dans l'url et qu'on a soumis le formulaire
 if ( count($_POST) > 0){ 
-    move_uploaded_file($_FILES['manuel']['tmp_name'], 'media/'.basename($nomTicket));
-    move_uploaded_file($_FILES['manuel']['tmp_name'], 'media/'.basename($nomTicket));
+    move_uploaded_file($_FILES['ticket_achat']['tmp_name'], 'media/'.basename($_FILES['ticket_achat']['name']));
+    move_uploaded_file($_FILES['manuel']['tmp_name'], 'media/'.basename($_FILES['manuel']['name']));
 
     if(strlen(trim($_POST['adresse'])) !== 0){
         $adresse = trim($_POST['adresse']);
