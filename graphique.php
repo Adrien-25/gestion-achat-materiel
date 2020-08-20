@@ -22,7 +22,6 @@ $sth->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
 $sth->execute();
 $data = $sth->fetch(PDO::FETCH_ASSOC);
 
-var_dump($data);
 
 $depense = array(
     "Loisirs" => "0",
