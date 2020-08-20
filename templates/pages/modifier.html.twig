@@ -64,11 +64,14 @@
             <input  type="file" class="form-control-file " name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" value="{{modify.manuel}}">
         </div>
     </div>
-    <div class="form-group col-sm-12 col-md-12 col-lg-12">
-        <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien">{{modify.conseil_entretien}}</textarea>
-    </div>
-    <div class=" col-sm-12 col-md-12 col-lg-12">
-        <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
+    <div class="form-row">
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+            <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien">{{modify.conseil_entretien}}</textarea>
+        </div>
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+            <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
+        </div>
+
     </div>
 </form> 
 {% endblock add %}
