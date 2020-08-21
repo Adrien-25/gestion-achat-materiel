@@ -32,5 +32,5 @@ foreach ($result as $value){
         mail($to,$subject,$message,$headers) ; 
     }
 }
-/* 0 8 * * * cron.php > /dev/null */
+/* 0 8 * * * cron.php */
 ?>
