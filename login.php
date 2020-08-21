@@ -49,7 +49,7 @@ if(!isset($_SESSION['identifiant'])){
 }
 echo $msg;
 $template = $twig->load('pages/login.html.twig');
-echo $template->render();
+echo $template->render(['message'=> $msg]);
 ?>
 
 
