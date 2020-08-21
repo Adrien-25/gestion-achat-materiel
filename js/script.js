@@ -142,7 +142,6 @@ if (ctx) {
             const DepenseTab = graphiqueDonnee.split('|');
             var elementsSupprimes = DepenseTab.splice(0, 1);
             var DepenseTabNbr = DepenseTab.map(Number);
-            console.log(DepenseTabNbr);
             ctx.height = 200;
             var myChart = new Chart(ctx, {
                 type: 'bar',
