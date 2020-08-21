@@ -1,24 +1,24 @@
 {% extends "./base.html.twig" %}
 {% block title %}Ajouter{% endblock title %}
-       
-    {% block add %}
-    
-    <form action="" method="post" name="formAdd" id="formAdd" enctype="multipart/form-data">
-         
+
+{% block add %}
+
+<form action="" method="post" name="formAdd" id="formAdd" enctype="multipart/form-data">
+
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6 input-group-prepend">
-            
+
             {# <span class="input-group-text" id="addon-wrapping"><i class="zmdi zmdi-file-text"></i></span> #}
-            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté" >
-           
+            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté">
+
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit " >
+            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit ">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            
+
             <select name="categorie" class="custom-select" id="categorie">
                 <option value="">Choississez votre catégorie</option>
                 <option value="Loisirs">Loisirs</option>
@@ -33,74 +33,72 @@
                 <option value="Mode">Mode</option>
                 <option value="Autres">Autres</option>
             </select>
-                
-            
+
+
         </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6" >
-            
-            <input type="text"  name="prix" placeholder="le prix du produit" id="prix" class="form-control">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+
+            <input type="text" name="prix" placeholder="le prix du produit" id="prix" class="form-control">
         </div>
-        
-        
+
+
     </div>
 
 
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label>Vente direct</label>
-            <input type="radio" name="place" id="adresse_radio" value="adresseRadio"checked>
+            <input type="radio" name="place" id="adresse_radio" value="adresseRadio" checked>
             <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce">
-             
-            
+
+
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label> e-commerce</label>
             <input type="radio" name="place" id="url_radio" value="urlRadio">
-                    
+
             <input type="text" class="form-control" name="url" id="url" placeholder="Adresse du site e-commerce">
         </div>
     </div>
-    
+
 
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label for="date_achat">Date d'achat</label>
             <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat">
-            
+
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
             <label for="date_fin_garantie">Date de fin de garantie</label>
-            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie">
-            
+            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie"
+                placeholder="Votre date de fin de garantie">
+
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label for="ticket_achat">Votre ticket d'achat</label>
-            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat">
+            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat"
+                placeholder="Votre ticket d'achat">
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
             <label for="manuel">Manuel d'utilisation</label>
-            <input  type="file" class="form-control-file " name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" >
-            
+            <input type="file" class="form-control-file " name="manuel" id="manuel"
+                placeholder="Votre manuel d'utilisation">
+
         </div>
     </div>
-      <div class="form-row">
+    <div class="form-row">
 
-          <div class="form-group col-sm-12 col-md-12 col-lg-12">
-              <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien"></textarea>
-              
-          </div>
-          <div class=" form-group col-sm-12 col-md-12 col-lg-12">
-              <input type="submit"  value="Ajouter" class="btn btn-primary btn-lg btn-block" id="formSubmit">
-             
-          </div>
-      </div>
-</form> 
-    {% endblock add %}
-    
+        <div class="form-group col-sm-12 col-md-12 col-lg-12">
+            <textarea name="conseil_entretien" id="conseil_entretien" class="form-control" cols="30"
+                placeholder="Vos conseil d'entretien"></textarea>
 
+        </div>
+        <div class=" form-group col-sm-12 col-md-12 col-lg-12">
+            <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" id="formSubmit">
 
-        
-        
-
+        </div>
+    </div>
+</form>
+{% endblock add %}
