@@ -135,7 +135,14 @@ if (test == 1 || test == 2){
 /* Page graphique.php */
 //bar chart
 var ctx = document.getElementById("graphDepense");
+DepenseTabNbr = [];
 if (ctx) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var graphiqueDonnee = ctx.dataset.graphique;
+        const DepenseTab = graphiqueDonnee.split('|');
+        var elementsSupprimes = DepenseTab.splice(0, 1);
+        var DepenseTabNbr = DepenseTab.map(Number);
+    });
     ctx.height = 200;
     var myChart = new Chart(ctx, {
     type: 'bar',
@@ -145,7 +152,7 @@ if (ctx) {
         datasets: [
         {
             label: "My First dataset",
-            data: [65, 59, 80, 81, 56, 55, 40],
+            data: DepenseTabNbr,
             borderColor: "rgba(0, 123, 255, 0.9)",
             borderWidth: "0",
             backgroundColor: "rgba(0, 123, 255, 0.5)",

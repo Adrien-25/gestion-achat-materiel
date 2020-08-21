@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row">
         <div class="col">
-          {% for produit in liste_produits %}
             <!-- début modal -->
             <div class="modal fade"style="margin-top:100px;" data-backdrop="false" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -18,7 +17,6 @@
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          
            <input type="date" name="date_debut" id="defaultForm-email" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-email">Date de début des dépenses </label>
         </div>
@@ -50,5 +48,15 @@
 </div>
 </div>
 </div>
+{% set fullDepense = ''  %}
+{% for categorieDepense in depense %}
+
+{% set fullDepense = [fullDepense , categorieDepense]|join('|')  %}
+
 {% endfor %}
+
+
+<canvas id="graphDepense" width="400" height="400" data-graphique="{{fullDepense}}"></canvas>
+
 {% endblock add %}
+
