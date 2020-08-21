@@ -132,4 +132,49 @@ if (test == 1 || test == 2){
          
     });
 }
+/* Page graphique.php */
+//bar chart
+var ctx = document.getElementById("graphDepense");
+if (ctx) {
+    ctx.height = 200;
+    var myChart = new Chart(ctx, {
+    type: 'bar',
+    defaultFontFamily: 'Poppins',
+    data: {
+        labels: ["Loisirs", "Vêtements", "Multimédia", "jeux & jouets", "Vélos", "Téléphonie", "Electroménager","Bricolage","Maison","Mode","Autres"],
+        datasets: [
+        {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40],
+            borderColor: "rgba(0, 123, 255, 0.9)",
+            borderWidth: "0",
+            backgroundColor: "rgba(0, 123, 255, 0.5)",
+            fontFamily: "Poppins"
+        }
+        ]
+    },
+    options: {
+        legend: {
+        position: 'top',
+        labels: {
+            fontFamily: 'Poppins'
+        }
 
+        },
+        scales: {
+        xAxes: [{
+            ticks: {
+            fontFamily: "Poppins"
+
+            }
+        }],
+        yAxes: [{
+            ticks: {
+            beginAtZero: true,
+            fontFamily: "Poppins"
+            }
+        }]
+        }
+    }
+    });
+}
