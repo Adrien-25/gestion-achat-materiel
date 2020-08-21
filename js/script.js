@@ -13,14 +13,14 @@ test = 0
 if (undefined != formAdd) {
     form = formAddId;
     test = 1;
-} else if (undefined != formEdit){
+} else if (undefined != formEdit) {
     form = formEditId;
     test = 2;
-} 
-if (test == 1 || test == 2){
-    form.addEventListener("submit", function(e){
+}
+if (test == 1 || test == 2) {
+    form.addEventListener("submit", function (e) {
         e.preventDefault();
-        
+
         var submitTest = 1;
         /*ADRESSE*/
         var adresseInput = document.getElementById('adresse');
@@ -59,77 +59,77 @@ if (test == 1 || test == 2){
         /*Lieux d'achat */
         var adresseRadio = document.getElementById('adresse_radio');
         var urlRadio = document.getElementById('url_radio');
-        
-        if (adresseRadio.checked && adresse == ""){
+
+        if (adresseRadio.checked && adresse == "") {
             adresseInput.classList.add('emptyInput');
             submitTest = 0;
         } else {
             adresseInput.classList.remove('emptyInput');
         }
-        if (urlRadio.checked && url == ""){
+        if (urlRadio.checked && url == "") {
             urlInput.classList.add('emptyInput');
             submitTest = 0;
         } else {
             urlInput.classList.remove('emptyInput');
         }
-        if (nom == ""){
+        if (nom == "") {
             nomInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             nomInput.classList.remove('emptyInput');
         }
-        if (reference == ""){
+        if (reference == "") {
             referenceInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             referenceInput.classList.remove('emptyInput');
         }
-        if (categorie == ""){
+        if (categorie == "") {
             categorieInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             categorieInput.classList.remove('emptyInput');
         }
         if (date_achat == "" || date_achat > date_fin_garantie) {
             date_achatInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             date_achatInput.classList.remove('emptyInput');
         }
-        if (date_fin_garantie == "" || date_achat > date_fin_garantie){
+        if (date_fin_garantie == "" || date_achat > date_fin_garantie) {
             date_fin_garantieInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             date_fin_garantieInput.classList.remove('emptyInput');
         }
-        if ((prix == "") || (isNaN(prix) == true)){
+        if ((prix == "") || (isNaN(prix) == true)) {
             prixInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             prixInput.classList.remove('emptyInput');
         }
-        if (conseil_entretien == ""){
+        if (conseil_entretien == "") {
             conseil_entretienInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             conseil_entretienInput.classList.remove('emptyInput');
         }
-        if ((ticket_achat == "") && (test == 1)){
+        if ((ticket_achat == "") && (test == 1)) {
             ticket_achatInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             ticket_achatInput.classList.remove('emptyInput');
         }
-        if ((manuel == "") && (test == 1)){
+        if ((manuel == "") && (test == 1)) {
             manuelInput.classList.add('emptyInput');
             submitTest = 0;
-        }else {
+        } else {
             manuelInput.classList.remove('emptyInput');
         }
-        if (submitTest == 1){
+        if (submitTest == 1) {
             form.submit();
         }
-         
+
     });
 }
 /* Page graphique.php */
@@ -137,51 +137,51 @@ if (test == 1 || test == 2){
 var ctx = document.getElementById("graphDepense");
 DepenseTabNbr = [];
 if (ctx) {
-    document.addEventListener('DOMContentLoaded', function() {
-        var graphiqueDonnee = ctx.dataset.graphique;
-        const DepenseTab = graphiqueDonnee.split('|');
-        var elementsSupprimes = DepenseTab.splice(0, 1);
-        var DepenseTabNbr = DepenseTab.map(Number);
-    });
-    ctx.height = 200;
-    var myChart = new Chart(ctx, {
-    type: 'bar',
-    defaultFontFamily: 'Poppins',
-    data: {
-        labels: ["Loisirs", "Vêtements", "Multimédia", "jeux & jouets", "Vélos", "Téléphonie", "Electroménager","Bricolage","Maison","Mode","Autres"],
-        datasets: [
-        {
-            label: "My First dataset",
-            data: DepenseTabNbr,
-            borderColor: "rgba(0, 123, 255, 0.9)",
-            borderWidth: "0",
-            backgroundColor: "rgba(0, 123, 255, 0.5)",
-            fontFamily: "Poppins"
-        }
-        ]
-    },
-    options: {
-        legend: {
-        position: 'top',
-        labels: {
-            fontFamily: 'Poppins'
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+            var graphiqueDonnee = ctx.dataset.graphique;
+            const DepenseTab = graphiqueDonnee.split('|');
+            var elementsSupprimes = DepenseTab.splice(0, 1);
+            var DepenseTabNbr = DepenseTab.map(Number);
+            console.log(DepenseTabNbr);
+            ctx.height = 200;
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                defaultFontFamily: 'Poppins',
+                data: {
+                    labels: ["Loisirs", "Vêtements", "Multimédia", "jeux & jouets", "Vélos", "Téléphonie", "Electroménager", "Bricolage", "Maison", "Mode", "Autres"],
+                    datasets: [{
+                        label: "Dépense",
+                        data: DepenseTabNbr,
+                        borderColor: "rgba(0, 123, 255, 0.9)",
+                        borderWidth: "0",
+                        backgroundColor: "rgba(0, 123, 255, 0.5)",
+                        fontFamily: "Poppins"
+                    }]
+                },
+                options: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            fontFamily: 'Poppins'
+                        }
 
-        },
-        scales: {
-        xAxes: [{
-            ticks: {
-            fontFamily: "Poppins"
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontFamily: "Poppins"
 
-            }
-        }],
-        yAxes: [{
-            ticks: {
-            beginAtZero: true,
-            fontFamily: "Poppins"
-            }
-        }]
-        }
-    }
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                fontFamily: "Poppins"
+                            }
+                        }]
+                    }
+                }
+            });
+        
     });
 }
