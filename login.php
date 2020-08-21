@@ -9,15 +9,12 @@ if(!empty($_SESSION['identifiant'])){
 }
 /* élément twig */
 require_once 'vendor/autoload.php';
-
-
 $loader = new \Twig\Loader\FilesystemLoader('templates');
 $twig = new \Twig\Environment($loader, [
     'cache' => false,
     'debug' => true,
 ]);
 $twig->addExtension(new \Twig\Extension\DebugExtension());
-
 $identifiant = "";
 $mot_de_passe = "";
 $msg = "";
@@ -29,7 +26,6 @@ if(!isset($_SESSION['identifiant'])){
   $sth->execute();
   //On recupère le résultat de la requête
   $result = $sth->fetchAll(PDO::FETCH_ASSOC); 
-  
   foreach($result as $row){
     $identifiant = $row['identifiant'];
     $mot_de_passe = $row['mot_de_passe'];
@@ -51,5 +47,9 @@ if(!isset($_SESSION['identifiant'])){
 $template = $twig->load('pages/login.html.twig');
 echo $template->render(['message'=> $msg]);
 ?>
+
+
+  
+
 
 

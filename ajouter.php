@@ -10,7 +10,6 @@ $twig = new \Twig\Environment($loader, array(
     'debug' => true,
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
-
 $adresse = '';
 $url = '';
 $nom = '';
@@ -22,6 +21,7 @@ $prix= '';
 $conseil_entretien= '';
 $ticket_achat= '';
 $manuel= '';
+
 //Si on reçoit l'id dans l'url et qu'on a soumis le formulaire
 if ( count($_POST) > 0){ 
     move_uploaded_file($_FILES['ticket_achat']['tmp_name'], 'media/'.basename($_FILES['ticket_achat']['name']));

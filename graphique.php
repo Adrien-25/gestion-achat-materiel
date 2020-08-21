@@ -22,8 +22,6 @@ $sth = $dbh->prepare($sql);
 $sth->execute();
 //On recupère le résultat de la requête
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);  
-
-
 $depense = array(
     "Loisirs" => "0",
     "Vêtements" => "0",
@@ -37,19 +35,20 @@ $depense = array(
     "Mode" => "0",
     "Autres" => "0",
 );
-if (!empty($_POST)){
-    $date_debut = $_POST['date_debut'];
-    $date_fin = $_POST['date_fin'];
-    foreach($result as $value){
-        if (($value['date_achat'] > $date_debut) && ($value['date_achat'] > $date_fin)){
-            if(in_array($value['categorie'] , $depense)){
-                $depense[$value['categorie']] += $value['prix'];
+        if (!empty($_POST)){
+            $date_debut = $_POST['date_debut'];
+            $date_fin = $_POST['date_fin'];
+            foreach($result as $value){
+                if (($value['date_achat'] > $date_debut) && ($value['date_achat'] > $date_fin)){
+                    if(in_array($value['categorie'] , $depense)){
+                        $depense[$value['categorie']] += $value['prix'];
+                    }
+                }
             }
+            asort($depense);
         }
-    }
-    asort($depense);
-}
-$template = $twig->load('pages/graphique.html.twig');
-echo $template->render(['liste_produits' => $result,'depense' => $depense,'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
+        $template = $twig->load('pages/graphique.html.twig');
+        echo $template->render(['liste_produits' => $result,'date' => $_POST, 'depense' => $depense,'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
+        ?>
 
-?>
+

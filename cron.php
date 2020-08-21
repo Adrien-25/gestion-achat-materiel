@@ -9,13 +9,10 @@ $sth->execute();
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);  
 //Gestion des formats des dates en français
 $intlDateFormater = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT,IntlDateFormatter::NONE);
-
 $date_today = date('Y-m-d');
-
 foreach ($result as $value){
     $id = $value['id'];
     $date_garantie = $value['date_fin_garantie'];
-    
     /*Tache cron envoi d'email*/
     if ($date_today == $date_garantie){
         $mon_email = "adrien.schmidt7@gmail.com";
@@ -34,3 +31,6 @@ foreach ($result as $value){
 }
 /* 0 8 * * * cron.php */
 ?>
+
+
+    

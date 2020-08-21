@@ -1,49 +1,52 @@
 {% extends "./base.html.twig" %}
 {% block title %}login{% endblock title %}
-
 {% block content %}
-
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                
-                <div class="login-wrap">
-                    <div class="login-content">
-                       
-                        <div class="login-logo">
-                            <a href="#">
-                                <img src="images/icon/logo-ilustrator2.png" alt="logo login">
-                            </a>
-                        </div>
-                        {% if message != empty %}
-                        <div class="alert alert-danger" role="alert">
-                            {{message}}
-                          </div>
-                          {% endif %}
-                        
-                      
-                        <div class="login-form">
-                            <form action="login.php" method="post">
-                                <div class="form-group">
-                                    <label>Identifiant</label>
-                                    <input class="au-input au-input--full" type="text" name="identifiant" placeholder="Entrer votre identifiant" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label>Mot de passe</label>
-                                    <input class="au-input au-input--full" type="password" name="mot_de_passe" placeholder="Entrer votre mot de passe" required>
-                                </div>
-                                
-                               <!--  <button class="au-btn au-btn--block au-btn--green m-b-20 m-t-20" type="submit">register</button> -->
-                               <input type="submit" name="envoyer" class="au-btn au-btn--block au-btn--green m-b-20 m-t-20"  value="Envoyer">
-                            </form>
-                            
-                        </div>
+<div class="page-wrapper">
+    <div class="page-content--bge5">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <a href="#">
+                            <img src="images/icon/logo-ilustrator2.png" alt="logo login">
+                        </a>
+                    </div>
+                    {% if message != empty %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% endif %}
+                    <div class="login-form">
+                        <form action="login.php" method="post">
+                            <div class="form-group">
+                                <label>Identifiant</label>
+                                <input class="au-input au-input--full" type="text" name="identifiant"
+                                    placeholder="Entrer votre identifi ant" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Mot de passe</label>
+                                <input class="au-input au-input--full" type="password" name="mot_de_passe"
+                                    placeholder="Entrer votre mot de passe" required>
+                            </div>
+                            <input type="submit" name="envoyer" class="au-btn au-btn--block au-btn--green m-b-20 m-t-20"
+                                value="Envoyer">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-    {% endblock content %}
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
 

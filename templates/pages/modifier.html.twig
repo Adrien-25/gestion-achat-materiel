@@ -1,17 +1,15 @@
 {% extends "./base.html.twig" %}
 {% block title %}Modifier{% endblock title %}
 {% block add %}
-
-<form action="" method="post" name="formEdit" id="formEdit"  enctype="multipart/form-data">
+<form action="" method="post" name="formEdit" id="formEdit" enctype="multipart/form-data">
     <div class="form-row">
-        <div class="form-group col-sm-12 col-md-6 col-lg-6 input-group-prepend">
-            
-            {# <span class="input-group-text" id="addon-wrapping"><i class="zmdi zmdi-file-text"></i></span> #}
-            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté"  value="{{modify.nom}}">
-        
+        <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
+            <input type="text" class="form-control " name="nom" id="nom" placeholder="Nom du produit acheté"
+                value="{{modify.nom}}">
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
-            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit " value="{{modify.reference}}" >
+            <input type="text" class="form-control" name="reference" id="reference" placeholder="Référence du produit "
+                value="{{modify.reference}}">
         </div>
     </div>
     <div class="form-row">
@@ -27,54 +25,66 @@
                 {% endfor %}
             </select>
         </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6" >
-            <input type="text"  name="prix" placeholder="le prix du produit" id="prix"  class="form-control" value="{{modify.prix}}">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <input type="text" name="prix" placeholder="le prix du produit" id="prix" class="form-control"
+                value="{{modify.prix}}">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label>Vente direct</label>
-            <input type="radio" name="place" id="adresse_radio" value="adresseRadio"checked>
-            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce" value="{{modify.adresse}}">
-    </div>
-    <div class="form-group col-sm-12 col-md-6 col-lg-6">
-        <label> e-commerce</label>
-        <input type="radio" name="place" id="url_radio" value="urlRadio">
-        <input type="text" class="form-control" name="url" id="url"  placeholder="Adresse du site e-commerce" value="{{modify.url}}">
-    </div>
+            <input type="radio" name="place" id="adresse_radio" value="adresseRadio" checked>
+            <input type="text" class="form-control" name="adresse" id="adresse" placeholder="Adresse du commerce"
+                value="{{modify.adresse}}">
+        </div>
+        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+            <label> e-commerce</label>
+            <input type="radio" name="place" id="url_radio" value="urlRadio">
+            <input type="text" class="form-control" name="url" id="url" placeholder="Adresse du site e-commerce"
+                value="{{modify.url}}">
+        </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label for="date_achat">Date d'achat</label>
-            <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat" value="{{modify.date_achat}}" >
+            <input type="date" class="form-control " name="date_achat" id="date_achat" placeholder="Votre date d'achat"
+                value="{{modify.date_achat}}">
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
             <label for="date_fin_garantie">Date de fin de garantie</label>
-            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie" placeholder="Votre date de fin de garantie" value="{{modify.date_fin_garantie}}" >
-            
+            <input type="date" class="form-control" name="date_fin_garantie" id="date_fin_garantie"
+                placeholder="Votre date de fin de garantie" value="{{modify.date_fin_garantie}}">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label for="ticket_achat">Votre ticket d'achat</label>
-            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat" placeholder="Votre ticket d'achat" value="{{modify.ticket_achat}}">
+            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat"
+                placeholder="Votre ticket d'achat" value="{{modify.ticket_achat}}">
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6 custom-file">
             <label for="manuel">Manuel d'utilisation</label>
-            <input  type="file" class="form-control-file " name="manuel" id="manuel" placeholder="Votre manuel d'utilisation" value="{{modify.manuel}}">
+            <input type="file" class="form-control-file " name="manuel" id="manuel"
+                placeholder="Votre manuel d'utilisation" value="{{modify.manuel}}">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-            <textarea name="conseil_entretien" id="conseil_entretien" class="form-control"  cols="30"  placeholder="Vos conseil d'entretien">{{modify.conseil_entretien}}</textarea>
+            <textarea name="conseil_entretien" id="conseil_entretien" class="form-control" cols="30"
+                placeholder="Vos conseil d'entretien">{{modify.conseil_entretien}}</textarea>
         </div>
         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-            <input type="submit"  value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
+            <input type="submit" value="Modifier" class="btn btn-primary btn-lg btn-block" id="formSubmit">
         </div>
-
     </div>
-</form> 
+</form>
 {% endblock add %}
+
+            
+            
+        
+            
+
    
    
               
