@@ -1,8 +1,16 @@
 {% extends "./base.html.twig" %}
 {% block title %}Graphique{% endblock title %}
 {% block add %}
+{% set fullDepense = ''  %}
+{% for categorieDepense in depense %}
 
-<canvas id="graphDepense" width="400" height="400"></canvas>
+{% set fullDepense = [fullDepense , categorieDepense]|join('|')  %}
 
+{% endfor %}
+
+
+{{ dump(fullDepense) }}
+<canvas id="graphDepense" width="400" height="400" data-graphique="{{fullDepense}}"></canvas>
 
 {% endblock add %}
+
