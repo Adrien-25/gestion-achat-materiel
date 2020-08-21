@@ -1,6 +1,6 @@
 <?php
 /***En local */
-/*Nom de la base de donnée*/
+// /*Nom de la base de donnée*/
 define('DATABASE', 'gestion_achat');
 /*Identifiant de la base de donnée*/ 
 define('USER', 'root');

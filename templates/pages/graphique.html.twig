@@ -1,18 +1,79 @@
 {% extends "./base.html.twig" %}
 {% block title %}Graphique{% endblock title %}
 {% block add %}
-<canvas id="myChart" width="400" height="400"></canvas>
-<script>
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
+<div class="container">
+    <div class="row">
+        <div class="col">
+          {% for produit in liste_produits %}
+            <!-- début modal -->
+            <!-- <div class="modal fade"style="margin-top:100px;" data-backdrop="false" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Voir les dépenses par catégories</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
+          <!-- <input type="date" name="date_debut" id="defaultForm-email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Date de début des dépenses </label>
+        </div>
+
+        <div class="md-form mb-4"> -->
+          <!-- <i class="fas fa-lock prefix grey-text"></i> -->
+          <!-- <input type="date" name="date_fin" id="defaultForm-pass" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Date de fin des dépenses</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-info">Afficher le graphique</button>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+<!-- fin modal  -->
+
+<!-- <div class="text-center">
+  <a href="" class="btn btn-info btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Définissez les dates!</a>
+</div> -->
+<div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Modal header</h3>
+    </div>
+    <div class="modal-body">
+      <p>One fine body…</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn">Close</a>
+      <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+  </div>
+<script type="text/javascript">
+const modal = document.querySelectorAll("#myModal");
+modal.addEventListener('unload', function(){
+  console.log("Hello World!");
+});
+
+    
+ 
+</script>
+            <canvas id="myChart"></canvas>
+            <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx , {
+                    type: 'bar',
+                    data: {
+                        labels: ({{ produit.categorie|chart|raw }}),
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
@@ -20,13 +81,13 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
+            'rgba(255, 99, 132, 1)',
                 'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
-            ],
+                ],
             borderWidth: 1
         }]
     },
@@ -41,5 +102,8 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-
+</div>
+</div>
+</div>
+{% endfor %}
 {% endblock add %}

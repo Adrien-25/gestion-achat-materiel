@@ -10,6 +10,30 @@ $twig = new \Twig\Environment($loader, array(
     'debug' => true,
 ));
 $twig->addExtension(new \Twig\Extension\DebugExtension());
+/**Twig chart */
+class AppExtension extends \Twig_Extension
+{
+    public function getFilters()
+    {
+        return array(
+            new \Twig_SimpleFilter('chart', array($this, 'chartFilter')),
+        );
+    }
+
+    public function chartFilter($items, $key = 'intitule')
+    {
+        $output = [];
+        foreach ($items as $item {
+            if (array_key_exists($key, $item)) {
+                $output[] = $item[$key];
+            }   
+        }    
+
+        return json_encode($output));
+    }
+}
+
+/**fin  */
 
 /*Test de connexion*/
 if(empty($_SESSION['identifiant'])){
@@ -50,6 +74,6 @@ if (!empty($_POST)){
 }
 
 $template = $twig->load('pages/graphique.html.twig');
-echo $template->render(['liste_produits' => $data,'liste_produits' => $depense,'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
+echo $template->render(['liste_produits' => $data,'dépenses' => $depense,'avatar' => $_SESSION['identifiant'],'email' => $_SESSION['email']]);
 
 ?>
