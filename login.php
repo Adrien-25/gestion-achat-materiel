@@ -42,12 +42,12 @@ if(!isset($_SESSION['identifiant'])){
         $_SESSION['email'] = $email; 
         header('Location: index.php');
       }else {
-          $msg = 'Mauvais indentifiant ou mot de passe';
+          $msg = 'Mauvais indentifiant ou mot de passe !';
       }
     }
   }
 }
-echo $msg;
+
 $template = $twig->load('pages/login.html.twig');
 echo $template->render(['message'=> $msg]);
 ?>
