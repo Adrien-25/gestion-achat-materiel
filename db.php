@@ -2,13 +2,13 @@
 
 /***En local */
 /*Nom de la base de donnée*/
-define('DATABASE', 'gestion_achat');
-/*Identifiant de la base de donnée*/ 
-define('USER', 'root');
-/*Mot de passe de la base de donnée*/ 
-define('PWD', '');
-/*Hôte de la base de donnée */
-define('HOST','localhost');
+// define('DATABASE', 'gestion_achat');
+// /*Identifiant de la base de donnée*/ 
+// define('USER', 'root');
+// /*Mot de passe de la base de donnée*/ 
+// define('PWD', '');
+// /*Hôte de la base de donnée */
+// define('HOST','localhost');
 
 /***prod Fouad */
 // define('DATABASE', 'fouadl_gestionproduits');
@@ -21,13 +21,13 @@ define('HOST','localhost');
 
 /**prod adrien */
 /*Nom de la base de donnée*/
-// define('DATABASE', 'adriens_gestion');
-// /*Identifiant de la base de donnée*/ 
-// define('USER', 'adriens');
-// /*Mot de passe de la base de donnée*/ 
-// define('PWD', 'sHXd4ZJ2qCL8rA==');
-// /*Hôte de la base de donnée */
-// define('HOST','localhost');
+define('DATABASE', 'adriens_gestion');
+/*Identifiant de la base de donnée*/ 
+define('USER', 'adriens');
+/*Mot de passe de la base de donnée*/ 
+define('PWD', 'sHXd4ZJ2qCL8rA==');
+/*Hôte de la base de donnée */
+define('HOST','localhost');
 
 /*Connexion à la base de donnée*/
 try {
