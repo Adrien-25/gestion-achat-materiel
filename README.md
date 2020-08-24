@@ -37,7 +37,7 @@ Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 * Tâche cron qui envoie un email lorsque le produit arrive à terme de sa garantie
 * Une page ou l'on peut voir un graphique comparant les sommes dépensées par catégorie entre deux dates.
 
-### Les formulaires sont validés par JavaScript
+
 ### Technologie utilisées : 
 * PHP
 * TWIG
@@ -46,6 +46,6 @@ Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 * HTML
 * CSS
 * FRAMEWORK CSS (facultatif)
-
+### Les formulaires sont validés avec JavaScript
 
 
