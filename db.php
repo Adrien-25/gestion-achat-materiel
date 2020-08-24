@@ -20,7 +20,7 @@ define('HOST','localhost');
 // define('HOST','localhost');
 
 /**prod adrien */
-// /*Nom de la base de donnée*/
+/*Nom de la base de donnée*/
 // define('DATABASE', 'adriens_gestion');
 // /*Identifiant de la base de donnée*/ 
 // define('USER', 'adriens');
@@ -32,7 +32,7 @@ define('HOST','localhost');
 /*Connexion à la base de donnée*/
 try {
     // En local
-    $dbh = new PDO('mysql:host='.HOST.';port=3308;dbname='.DATABASE, USER, PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USER, PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     // En prod
     // $dbh = new PDO('mysql:host='.HOST.';dbname='.DATABASE, USER, PWD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     } catch (PDOException $e) {
