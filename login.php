@@ -38,7 +38,7 @@ if(!isset($_SESSION['identifiant'])){
         $_SESSION['email'] = $email; 
         header('Location: index.php');
       }else {
-          $msg = 'Mauvais indentifiant ou mot de passe !';
+          $msg = 'Mauvais identifiant ou mot de passe !';
       }
     }
   }

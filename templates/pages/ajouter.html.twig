@@ -27,8 +27,12 @@
                 <option value="Autres">Autres</option>
             </select>
         </div>
-        <div class="form-group col-sm-12 col-md-6 col-lg-6">
+        <div class="form-group col-sm-12 col-md-6 col-lg-6 input-group">
             <input type="text" name="prix" placeholder="le prix du produit" id="prix" class="form-control">
+            <div class="input-group-append">
+                <span class="input-group-text" style="color:red; background-color:azure;">€</span>
+                
+              </div>
         </div>
     </div>
     <div class="form-row">
@@ -57,7 +61,7 @@
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-6 col-lg-6">
             <label for="ticket_achat">Votre ticket d'achat</label>
-            <input type="file" class="form-control-file" name="ticket_achat" id="ticket_achat"
+            <input type="file" class="form-control-file " name="ticket_achat" id="ticket_achat"
                 placeholder="Votre ticket d'achat">
         </div>
         <div class="form-group col-sm-12 col-md-6 col-lg-6 ">
@@ -68,13 +72,13 @@
     </div>
     <div class="form-row">
         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-            <textarea name="conseil_entretien" id="conseil_entretien" class="form-control" cols="30"
-                placeholder="Vos conseil d'entretien"></textarea>
+            <textarea name="conseil_entretien" class="form-control rounded-0" id="conseil_entretien"   rows="3" cols="30"placeholder="Vos conseil d'entretien"></textarea>
         </div>
         <div class=" form-group col-sm-12 col-md-12 col-lg-12">
             <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block" id="formSubmit">
         </div>
     </div>
+    
 </form>
         
 {% endblock add %}

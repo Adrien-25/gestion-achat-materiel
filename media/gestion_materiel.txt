@@ -1,0 +1,12 @@
+e.roy@onlineformapro.com
+
+A FAIRE:
+Modal se ferme si clique sur fenetre
+Image index.php avec margin top
+référence du produit --> Référence
+Achété / date OU Fin de garantie LE "date"
+Taille Conseill limité OU affcihage réduit et possibilité voir plus 
+Titre page
+
+
+login mdp requiered --> $msg = "Veuillez saisir un identifiant et un mot de passe";
