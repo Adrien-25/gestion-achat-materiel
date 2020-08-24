@@ -11,7 +11,6 @@ Front : [Fouad LYOUSFI](https://github.com/fouad-git)
 Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 
 ## Instruction 
------------
 ### Le dashboard doit permettre de :
 * Lister les produits
 * Modifier un produit
@@ -39,7 +38,14 @@ Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 * Une page ou l'on peut voir un graphique comparant les sommes dépensées par catégorie entre deux dates.
 
 ### Les formulaires sont validés par JavaScript
-Technos : PHP, TWIG, SASS, GIT, JS, HTML, CSS, FRAMEWORK CSS (facultatif)
+### Technologie utilisées : 
+* PHP
+* TWIG
+* GIT
+* JS
+* HTML
+* CSS
+* FRAMEWORK CSS (facultatif)
 
 
 
