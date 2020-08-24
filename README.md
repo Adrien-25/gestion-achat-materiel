@@ -1,12 +1,14 @@
 Dashboard gestion achat
 =======================
 Projet de dashboard, gestion d'achat de matériel
+
 Ce dasboard devra être sécurisé par un système de login
 
 Équipe
 ------
 Front : [Fouad LYOUSFI](https://github.com/fouad-git)
-back : [Adrien SCHMIDT](https://github.com/Adrien-25)
+
+Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 
 Instruction 
 -----------
@@ -17,12 +19,12 @@ Instruction
 * Ajouter un produit
 
 # Pour chaque produit je doit rentrer les informations suivantes :
-* Lieux d'achat (En vente directe ou e*commerce)
+* Lieux d'achat (En vente directe ou e-commerce)
     * Si vente directe - Possibilité de saisir l'adresse
     * Si e-commerce - Possibilté de saisir l'url du e*commerce
 * Nom du produit
 * Référence du produit
-* Catégorie (Electroménager, TV*HIFI, Bricolage, Voiture....)
+* Catégorie (Electroménager, TV-HIFI, Bricolage, Voiture....)
     * Le produit n'appartiendra qu'à une seule catégorie
 * Date d'achat
 * Date de fin de garantie
