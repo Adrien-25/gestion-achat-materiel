@@ -1,24 +1,24 @@
-Dashboard gestion achat
-=======================
+# Dashboard gestion achat
+
 Projet de dashboard, gestion d'achat de matériel
 <br/>
 Ce dasboard devra être sécurisé par un système de login
 
-Équipe
-------
+## Équipe
+
 Front : [Fouad LYOUSFI](https://github.com/fouad-git)
 <br/>
 Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 
-Instruction 
+## Instruction 
 -----------
-# Le dashboard doit permettre de :
+### Le dashboard doit permettre de :
 * Lister les produits
 * Modifier un produit
 * Supprimer un produit
 * Ajouter un produit
 
-# Pour chaque produit je doit rentrer les informations suivantes :
+### Pour chaque produit je doit rentrer les informations suivantes :
 * Lieux d'achat (En vente directe ou e-commerce)
     * Si vente directe - Possibilité de saisir l'adresse
     * Si e-commerce - Possibilté de saisir l'url du e*commerce
@@ -34,11 +34,11 @@ Instruction
 * Manuel d'utlisation (Pas obligatoire si existe pas)
 
 
-# Optionnel :
+### Optionnel :
 * Tâche cron qui envoie un email lorsque le produit arrive à terme de sa garantie
 * Une page ou l'on peut voir un graphique comparant les sommes dépensées par catégorie entre deux dates.
 
-# Les formulaires seront validés par JavaScript
+### Les formulaires sont validés par JavaScript
 Technos : PHP, TWIG, SASS, GIT, JS, HTML, CSS, FRAMEWORK CSS (facultatif)
 
 
