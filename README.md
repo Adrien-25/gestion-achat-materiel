@@ -1,13 +1,13 @@
 Dashboard gestion achat
 =======================
 Projet de dashboard, gestion d'achat de matériel
-
+<br/>
 Ce dasboard devra être sécurisé par un système de login
 
 Équipe
 ------
 Front : [Fouad LYOUSFI](https://github.com/fouad-git)
-
+<br/>
 Back : [Adrien SCHMIDT](https://github.com/Adrien-25)
 
 Instruction 
