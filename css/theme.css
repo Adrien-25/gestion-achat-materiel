@@ -63,7 +63,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
                        color-stop(.5, transparent), to(transparent));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #4ce6ba88; 
+    background: #4ce6ba88; }
   
     
 * {
