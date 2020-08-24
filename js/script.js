@@ -149,7 +149,7 @@ if (ctx) {
                 data: {
                     labels: ["Loisirs", "Vêtements", "Multimédia", "jeux & jouets", "Vélos", "Téléphonie", "Electroménager", "Bricolage", "Maison", "Mode", "Autres"],
                     datasets: [{
-                        label: "Dépense",
+                        label: "Les dépenses",
                         data: DepenseTabNbr,
                         borderColor: "rgba(0, 123, 255, 0.9)",
                         borderWidth: "0",
@@ -159,7 +159,7 @@ if (ctx) {
                 },
                 options: {
                     legend: {
-                        position: 'top',
+                        position: 'bottom',
                         labels: {
                             fontFamily: 'Poppins'
                         }

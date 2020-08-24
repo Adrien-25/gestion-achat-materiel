@@ -2,8 +2,9 @@
 {% block title %}Graphique{% endblock title %}
 {% block add %}
 <div class="container">
-  <div class="row">
+  <div class="row"> 
     <div class="col">
+      
       <!-- début modal -->
       <div class="modal fade" style="margin-top:235px;" data-backdrop="false" id="modalLoginForm" tabindex="-1"
         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -39,6 +40,9 @@
         <a href="" class="btn btn-info btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Définissez
           les dates!</a>
       </div>
+      {% if date != empty %}
+       <div class="h6  float-sm-left float-md-left float-lg-left">Graphique des dépenses entre le {{date.date_debut|date("d-m-Y")}} et le {{date.date_fin|date("d-m-Y")}}</div>
+       {% endif %}
     </div>
   </div>
 </div>
@@ -49,6 +53,7 @@
 {% if date != empty %}
   <canvas id="graphDepense" width="400" height="400" data-graphique="{{fullDepense}}"></canvas>
 {% endif %}
+
 {% endblock add %}
   
           
