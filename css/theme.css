@@ -64,7 +64,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #4ce6ba88; 
-  }
+  
     
 * {
     margin: 0;
@@ -139,9 +139,10 @@ body {
 body ::-webkit-scrollbar 
 {
     width: 1px;
-
     background-color:#000;
 }
+
+
     
 
 

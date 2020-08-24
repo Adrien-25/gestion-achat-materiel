@@ -5,10 +5,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  
  */
- $custom-file-text: (
-fr: "Choisir un fichier"
-);
- .conseils{height :80px;
+ 
+ .conseils{
+     height :80px;
      max-height: 100px;
     overflow-y: scroll;}
     /* .card-img-top {
