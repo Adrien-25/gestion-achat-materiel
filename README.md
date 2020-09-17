@@ -5,7 +5,7 @@ Projet de dashboard, gestion d'achat de matériel
 Ce dasboard devra être sécurisé par un système de login
 
 ## Lien du site
-[Cliquez ici pour voir le DashBoard]<https://adrienschmidt.fr/ampoule>{:target="_blank" }
+[Cliquez ici pour voir le DashBoard](https://adrienschmidt.fr/ampoule){:target="_blank" }
 
 ## Équipe
 
